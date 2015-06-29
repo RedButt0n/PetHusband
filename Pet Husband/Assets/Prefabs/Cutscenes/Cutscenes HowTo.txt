@@ -1,0 +1,7 @@
+1. Place CutsceneManager in new empty scene
+2. Using TemplateFrame, make all the frames that you want to show in the cutscene
+	* Each frame consists of an image and a time (in seconds)
+	* The image will be shown full-screen, so must be designed to fit
+3. Add each frame as a child of the CutsceneManager
+	* The display order will be the order of the list of children (top to bottom)
+4. In the CutsceneManager, type the name of the scene which has to load afterwards. Make sure this scene is added in the Build Settings in order for this to work.
