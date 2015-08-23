@@ -19,14 +19,17 @@ public class SelectedHusbandController : MonoBehaviour {
 		UpdateHusband();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-		if (Input.GetMouseButtonUp (0)) {
-			AdvanceInList();
-			UpdateHusband();
-		}
+
+	public void PressNext()
+	{
+		AdvanceInList ();
+		UpdateHusband ();
+	}
+
+	public void PressPrevious()
+	{
+		GoBackInList ();
+		UpdateHusband ();
 	}
 
 	private void AdvanceInList() {
@@ -34,6 +37,13 @@ public class SelectedHusbandController : MonoBehaviour {
 			++_selectedNumber;
 		else
 			_selectedNumber = 0;
+	}
+
+	private void GoBackInList() {
+		if (_selectedNumber != 0)
+			--_selectedNumber;
+		else
+			_selectedNumber = _amountOfHusbands;
 	}
 
 	public void UpdateHusband() {
