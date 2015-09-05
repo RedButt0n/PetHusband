@@ -47,7 +47,7 @@ namespace Inklewriter.Unity
 
 			Canvas.ForceUpdateCanvases ();
 
-			StartCoroutine (AnimateScroll (scroll.verticalNormalizedPosition, 0, 0.5f));
+			//StartCoroutine (AnimateScroll (scroll.verticalNormalizedPosition, 0, 0.5f));
 		}
 
 		IEnumerator AnimateScroll (float from, float to, float duration)

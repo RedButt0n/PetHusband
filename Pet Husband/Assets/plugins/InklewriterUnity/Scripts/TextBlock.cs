@@ -20,10 +20,9 @@ namespace Inklewriter.Unity
 					image.sprite = sprite;
 					image.SetNativeSize ();
 				}
-			} else {
 			}
 
-			this.text.text = "    " + p.Text;
+			this.text.text = p.Text;
 		}
 
 		string FileNameWithoutExtension (string path)
