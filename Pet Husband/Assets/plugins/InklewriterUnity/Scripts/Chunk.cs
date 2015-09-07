@@ -23,6 +23,11 @@ namespace Inklewriter.Unity
 				obj.GetComponent<TextBlock> ().Set (p);
 			}
 
+			/*var paragraph = Instantiate (text.gameObject) as GameObject;
+			paragraph.SetActive (true);
+			paragraph.transform.SetParent (text.transform.parent);
+			paragraph.GetComponent<TextBlock> ().Set (chunk.Paragraphs[0]);*/
+
 			option.gameObject.SetActive (false);
 			foreach (var o in chunk.Options) {
 				if (!o.isVisible) {
