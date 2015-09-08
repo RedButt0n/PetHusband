@@ -6,13 +6,18 @@ using Inklewriter;
 using Inklewriter.Unity;
 
 public class PHParagraph : MonoBehaviour {
-
+	/*
 	public TextBlock text;
 	public PHOptionButton option;
 	public Text chosenOptionText;
 	public NextButton nextButton;
 
 	List<PHOptionButton> options = new List<PHOptionButton> ();
+*/
+	public Text text;
+	public Text chosenOptionText;
+	public Button optionButton;
+	public Button nextButton;
 
 	void Start()
 	{
@@ -22,12 +27,15 @@ public class PHParagraph : MonoBehaviour {
 
 	public void SetText (Paragraph paragraph, Option chosenOption)
 	{
+		Debug.Log ("SetText PHParagraph");
 		text.gameObject.SetActive (false);
 
 		var obj = Instantiate (text.gameObject) as GameObject;
 		obj.SetActive (true);
-		obj.transform.SetParent (text.transform.parent);
-		obj.GetComponent<TextBlock> ().Set (paragraph);
+		obj.transform.SetParent (text.transform.parent,false);
+		//obj.GetComponent<TextBlock> ().Set (paragraph);
+		obj.GetComponent<Text>().text = paragraph.Text;
+		//text.text = paragraph.Text;
 			
 		if (chosenOption != null) {
 			chosenOptionText.gameObject.SetActive (true);
@@ -39,7 +47,7 @@ public class PHParagraph : MonoBehaviour {
 
 	public void SetOptions(List<BlockContent<Option>> optionList, PetHusbandPlayer player)
 	{
-		option.gameObject.SetActive (false);
+/*		option.gameObject.SetActive (false);
 		nextButton.gameObject.SetActive(false);
 		if(options.Count > 0)
 		{
@@ -58,23 +66,23 @@ public class PHParagraph : MonoBehaviour {
 		} else
 		{
 			nextButton.gameObject.SetActive(true);
-		}
+		}*/
 	}
 	
 	public void Enable ()
 	{
-		option.transform.parent.gameObject.SetActive (true);
+		/*option.transform.parent.gameObject.SetActive (true);
 		foreach (var o in options) {
 			o.Enable ();
 		}
-		chosenOptionText.gameObject.SetActive (false);
+		chosenOptionText.gameObject.SetActive (false);*/
 	}
 	
 	public void Disable ()
 	{
-		option.transform.parent.gameObject.SetActive (false);
+		/*option.transform.parent.gameObject.SetActive (false);
 		foreach (var o in options) {
 			o.Disable ();
-		}
+		}*/
 	}
 }

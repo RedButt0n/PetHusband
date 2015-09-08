@@ -34,13 +34,15 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void InstantiateChunk (PlayChunk c, Option chosenOption = null)
 	{
+		Debug.Log ("Instantiating Chunck");
 		chunk.gameObject.SetActive (false);
 		var chunkObj = Instantiate (chunk.gameObject) as GameObject;
 		chunkObj.SetActive (true);
-		chunkObj.transform.SetParent (chunk.transform.parent);
+		chunkObj.transform.SetParent (chunk.transform.parent,false);
 		var chunkComponent = chunkObj.GetComponent<PHChunk> ();
 		chunkComponent.Set (c, chosenOption, this);
 		chunks.Add (chunkComponent);
+		chunk = chunkComponent;
 		
 		Canvas.ForceUpdateCanvases ();
 		
@@ -49,6 +51,7 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void SelectOption (Option option)
 	{
+		Debug.Log ("Select Option");
 		if (option.LinkStitch != null) {
 			if (chunks.Count > 0) {
 				chunks[chunks.Count - 1].Disable ();
@@ -71,6 +74,7 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void GoToNextParagraph()
 	{
+		Debug.Log ("GoToNextParagraph");
 		if (chunk != null) {
 			chunk.GoToNextparagraph();
 		}

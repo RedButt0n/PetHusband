@@ -8,7 +8,7 @@ public class PHChunk : MonoBehaviour {
 
 	public GameObject activeParagraph;
 	List<GameObject> paragraphs = new List<GameObject> ();
-	int activeParagraphIndex = -1;
+	int activeParagraphIndex = 0;
 
 	public void Set (PlayChunk chunk, Option chosenOption, PetHusbandPlayer player)
 	{
@@ -16,7 +16,7 @@ public class PHChunk : MonoBehaviour {
 		foreach (var p in chunk.Paragraphs) {
 			var newParagraph = Instantiate (activeParagraph) as GameObject;
 			newParagraph.SetActive (false);
-			newParagraph.transform.SetParent (activeParagraph.transform.parent);
+			newParagraph.transform.SetParent (activeParagraph.transform.parent,false);
 			var paragraphComponent = newParagraph.GetComponent<PHParagraph>();
 			paragraphComponent.SetText(p,chosenOption);
 			paragraphs.Add(newParagraph);
@@ -31,6 +31,8 @@ public class PHChunk : MonoBehaviour {
 	public void GoToNextparagraph()
 	{
 		++activeParagraphIndex;
+		Debug.Log("GoToNextparagraph: " + activeParagraphIndex); 
+		Debug.Log("paragrphas: " + paragraphs.Count);
 		activeParagraph.SetActive(false);
 
 		activeParagraph = paragraphs[activeParagraphIndex];
@@ -43,7 +45,7 @@ public class PHChunk : MonoBehaviour {
 		foreach (var o in options) {
 			o.Enable ();
 		}
-		chosenOptionText.gameObject.SetActive (false);*/
+		chosenOptionText.gameObject.SetActive (false);	*/
 	}
 	
 	public void Disable ()
