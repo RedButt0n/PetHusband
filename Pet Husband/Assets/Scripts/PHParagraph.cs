@@ -65,18 +65,8 @@ public class PHParagraph : MonoBehaviour {
 				player.SelectOption (o.content);
 			});
 
-			//Text buttonText = obj.GetComponentInChildren<Text>();
-			//buttonText.text = o.content.Text;
 			//Set the text
-			//obj.GetComponentsInChildren().text = o.content.Text;
-			/*Text objText = obj.GetComponentInChildren<Text>();
-			if(objText != null)
-			{
-				objText.text = o.content.Text;
-			}*/
-
-			//newOptionButton.GetComponentInChildren<Text>().text = o.content.Text;
-			//newOptionButton.GetComponentInChildren<Text>().text = "bla";
+			newOptionButton.gameObject.transform.FindChild("Text").GetComponent<Text>().text = o.content.Text;
 
 			//optionButton.Set (o.content, player);
 			options.Add (newOptionButton);
