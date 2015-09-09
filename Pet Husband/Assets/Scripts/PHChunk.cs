@@ -31,12 +31,15 @@ public class PHChunk : MonoBehaviour {
 	public void GoToNextparagraph()
 	{
 		++activeParagraphIndex;
-		Debug.Log("GoToNextparagraph: " + activeParagraphIndex); 
-		Debug.Log("paragrphas: " + paragraphs.Count);
-		activeParagraph.SetActive(false);
+		//Debug.Log("GoToNextparagraph: " + activeParagraphIndex); 
+		//Debug.Log("paragrphas: " + paragraphs.Count);
+		if(activeParagraphIndex < paragraphs.Count)
+		{
+			activeParagraph.SetActive(false);
 
-		activeParagraph = paragraphs[activeParagraphIndex];
-		activeParagraph.SetActive(true);
+			activeParagraph = paragraphs[activeParagraphIndex];
+			activeParagraph.SetActive(true);
+		}
 	}
 	
 	public void Enable ()

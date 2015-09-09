@@ -74,7 +74,7 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void GoToNextParagraph()
 	{
-		Debug.Log ("GoToNextParagraph");
+		//Debug.Log ("GoToNextParagraph");
 		if (chunk != null) {
 			chunk.GoToNextparagraph();
 		}
