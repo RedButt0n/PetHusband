@@ -86,6 +86,11 @@ public class PHParagraph : MonoBehaviour {
 			o.interactable = true;
 		}
 		chosenOptionText.gameObject.SetActive (false);
+
+		if(options.Count > 0)
+		{
+			nextButton.gameObject.SetActive(false);
+		}
 	}
 	
 	public void Disable ()
@@ -94,5 +99,7 @@ public class PHParagraph : MonoBehaviour {
 		foreach (var o in options) {
 			o.interactable = false;
 		}
+
+		nextButton.gameObject.SetActive(false);
 	}
 }

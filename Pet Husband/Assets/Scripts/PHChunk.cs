@@ -36,8 +36,12 @@ public class PHChunk : MonoBehaviour {
 		if(activeParagraphIndex < paragraphs.Count)
 		{
 			activeParagraph.SetActive(false);
+			var paragraphComponent = activeParagraph.GetComponent<PHParagraph>();
+			paragraphComponent.Disable();
 
 			activeParagraph = paragraphs[activeParagraphIndex];
+			paragraphComponent = activeParagraph.GetComponent<PHParagraph>();
+			paragraphComponent.Enable();
 			activeParagraph.SetActive(true);
 		}
 	}
