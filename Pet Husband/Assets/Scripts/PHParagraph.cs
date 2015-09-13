@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Inklewriter.Player;
 using Inklewriter;
 using Inklewriter.Unity;
+using System.Text.RegularExpressions;
 
 public class PHParagraph : MonoBehaviour {
 	/*
@@ -15,14 +16,19 @@ public class PHParagraph : MonoBehaviour {
 	//List<PHOptionButton> options = new List<PHOptionButton> ();
 
 	public Text text;
-	public Text chosenOptionText;
+	//public Text chosenOptionText;
 	public Button optionButton;
 	public Button nextButton;
 	List<Button> options = new List<Button> ();
 
+	public Image image;
+
+	private bool enableNextButton = true;
+
 	void Start()
 	{
-		nextButton.gameObject.SetActive(true);
+		Debug.Log("Start");
+		nextButton.gameObject.SetActive(enableNextButton);
 		optionButton.gameObject.SetActive (false);
 	}
 
@@ -38,11 +44,25 @@ public class PHParagraph : MonoBehaviour {
 		obj.GetComponent<Text>().text = paragraph.Text;
 		//text.text = paragraph.Text;
 			
-		if (chosenOption != null) {
+		/*if (chosenOption != null) {
 			chosenOptionText.gameObject.SetActive (true);
 			chosenOptionText.text = chosenOption.Text;
 		} else {
 			chosenOptionText.gameObject.SetActive (false);
+		}*/
+
+		//Set Image
+		if (!string.IsNullOrEmpty (paragraph.Image)) {
+			// Get file name without extension
+			var imageName = FileNameWithoutExtension (paragraph.Image);
+			var sprite = Resources.Load<Sprite> (imageName);
+			if (sprite) {
+				image.sprite = sprite;
+				image.SetNativeSize ();
+			}
+		} else
+		{
+			image.gameObject.SetActive(false);
 		}
 	}
 
@@ -52,7 +72,7 @@ public class PHParagraph : MonoBehaviour {
 		nextButton.gameObject.SetActive(false);
 
 		foreach (var o in optionList) {
-			if (!o.isVisible) {
+			if (!o.IsVisible) {
 				continue;
 			}
 			var obj = Instantiate (optionButton.gameObject) as GameObject;
@@ -61,12 +81,13 @@ public class PHParagraph : MonoBehaviour {
 
 			//Add the onClick action
 			Button newOptionButton = obj.GetComponent<Button> ();
+			var optionContent = o.Content;
 			newOptionButton.onClick.AddListener(delegate {
-				player.SelectOption (o.content);
+				player.SelectOption (optionContent);
 			});
 
 			//Set the text
-			newOptionButton.gameObject.transform.FindChild("Text").GetComponent<Text>().text = o.content.Text;
+			newOptionButton.gameObject.transform.FindChild("Text").GetComponent<Text>().text = o.Content.Text;
 
 			//optionButton.Set (o.content, player);
 			options.Add (newOptionButton);
@@ -76,6 +97,10 @@ public class PHParagraph : MonoBehaviour {
 		if(options.Count <= 0)
 		{
 			nextButton.gameObject.SetActive(true);
+			enableNextButton = true;
+		} else
+		{
+			enableNextButton = false;
 		}
 	}
 	
@@ -85,11 +110,11 @@ public class PHParagraph : MonoBehaviour {
 		foreach (var o in options) {
 			o.interactable = true;
 		}
-		chosenOptionText.gameObject.SetActive (false);
+		//chosenOptionText.gameObject.SetActive (false);
 
 		if(options.Count > 0)
 		{
-			nextButton.gameObject.SetActive(false);
+			enableNextButton = false;
 		}
 	}
 	
@@ -100,6 +125,15 @@ public class PHParagraph : MonoBehaviour {
 			o.interactable = false;
 		}
 
-		nextButton.gameObject.SetActive(false);
+		nextButton.enabled = false;
+		enableNextButton = false;
+		//nextButton.gameObject.SetActive(false);
+	}
+
+	private string FileNameWithoutExtension (string path)
+	{
+		var pattern = @"[^/]*(?=\.[^.]+($|\?))";
+		var match = Regex.Match (path, pattern);
+		return match.Groups[0].Value;
 	}
 }

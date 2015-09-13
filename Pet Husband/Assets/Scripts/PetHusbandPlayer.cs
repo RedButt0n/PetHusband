@@ -12,6 +12,8 @@ public class PetHusbandPlayer : MonoBehaviour {
 	public RectTransform chunkContainer;
 	public PHChunk chunk;
 
+	private PHChunk activeChunk;
+
 	StoryPlayer player;	
 	List<PHChunk> chunks = new List<PHChunk> ();
 
@@ -27,22 +29,23 @@ public class PetHusbandPlayer : MonoBehaviour {
 		StoryModel model = StoryModel.Create (storyJson);
 		
 		this.player = new StoryPlayer (model, new UnityMarkupConverter ());
-		
-		var firstChunk = player.GetChunkFromStitch (player.InitialStitch);
+
+		activeChunk = chunk;
+		var firstChunk = player.CreateChunkForStitch (player.InitialStitch);
 		InstantiateChunk (firstChunk);
 	}
 
 	public void InstantiateChunk (PlayChunk c, Option chosenOption = null)
 	{
 		Debug.Log ("Instantiating Chunck");
-		chunk.gameObject.SetActive (false);
+		activeChunk.gameObject.SetActive (false);
 		var chunkObj = Instantiate (chunk.gameObject) as GameObject;
 		chunkObj.SetActive (true);
 		chunkObj.transform.SetParent (chunk.transform.parent,false);
 		var chunkComponent = chunkObj.GetComponent<PHChunk> ();
 		chunkComponent.Set (c, chosenOption, this);
 		chunks.Add (chunkComponent);
-		chunk = chunkComponent;
+		activeChunk = chunkComponent;
 		
 		Canvas.ForceUpdateCanvases ();
 		
@@ -56,8 +59,8 @@ public class PetHusbandPlayer : MonoBehaviour {
 			if (chunks.Count > 0) {
 				chunks[chunks.Count - 1].Disable ();
 			}
-			var chunk = player.GetChunkFromStitch (option.LinkStitch);
-			InstantiateChunk (chunk, option);
+			var playChunk = player.CreateChunkForStitch (option.LinkStitch);
+			InstantiateChunk (playChunk, option);
 		}
 	}
 	
@@ -75,8 +78,8 @@ public class PetHusbandPlayer : MonoBehaviour {
 	public void GoToNextParagraph()
 	{
 		//Debug.Log ("GoToNextParagraph");
-		if (chunk != null) {
-			chunk.GoToNextparagraph();
+		if (activeChunk != null) {
+			activeChunk.GoToNextparagraph();
 		}
 	}
 	
