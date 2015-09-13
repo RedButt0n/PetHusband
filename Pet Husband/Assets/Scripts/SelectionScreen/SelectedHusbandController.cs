@@ -6,6 +6,7 @@ public class SelectedHusbandController : MonoBehaviour {
 
 	//These are needed to connect to the Image & Text objects in the scene
 	public Image _husbandImage;
+	public Text _husbandName;
 	public Text _husbandDescription;
 
 	public GameObject[] _husbandlist;				//List of all available husbands
@@ -48,6 +49,7 @@ public class SelectedHusbandController : MonoBehaviour {
 
 	public void UpdateHusband() {
 		_selectedHusband = _husbandlist [_selectedNumber].GetComponent<HusbandProperties> ();
+		_husbandName.text = _selectedHusband._name;
 		_husbandDescription.text = _selectedHusband._description;
 		_husbandImage.sprite = _selectedHusband._image;
 	}
