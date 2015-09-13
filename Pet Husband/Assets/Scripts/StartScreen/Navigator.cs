@@ -28,4 +28,10 @@ public class Navigator : MonoBehaviour {
 		Application.LoadLevel ("First_Cutscene");
 	}
 
+	public void Quit()
+	{
+		//Debug.Log ("Quit");
+		Application.Quit ();
+	}
+
 }
