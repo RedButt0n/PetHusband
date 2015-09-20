@@ -1,0 +1,1121 @@
+{
+	"url_key" : "92nv",
+	"updated_at" : "2015-06-02T11:26:50Z",
+	"created_at" : "2015-03-13T14:51:09Z",
+	"title" : "Pet Husband",
+	"data" : {
+		"editorData" : {
+			"textSize" : 1,
+			"authorName" : "Sylvie Flamand & Gerwin Brabants",
+			"libraryVisible" : false
+		},
+		"initial" : "maandag",
+		"allowCheckpoints" : false,
+		"stitches" : {
+			"victorWieHadVerw" : {
+				"content" :
+				[
+					"*-Victor: -*Wie had verwacht dat die film zo ingewikkeld zou worden? /=(lachend)=/", {
+						"image" : "http://i62.tinypic.com/ka3brt.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS3"
+					}
+				]
+			},
+
+			"victorWatVondJeV" : {
+				"content" :
+				[
+					"*-Victor: -*Wat vond je van de film? /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLNietZoFantasti"
+					}, {
+						"notIfCondition" : "slaap einde"
+					}, {
+						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+
+			"victorMijMaaktHe" : {
+				"content" : ["*-Victor:-* Mij maakt het niet uit. Wat wil jij? /=(vriendelijk) =/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "victorPffIkHebEc"
+					}, {
+						"ifCondition" : "onbeslist = 1"
+					}
+				]
+			},
+			"pLNeenNatuurlijk" : {
+				"content" : ["*-PL:-* Neen natuurlijk niet. ", {
+						"divert" : "victorSchatJijBe"
+					}
+				]
+			},
+			"pLIkHebWelZinInC" : {
+				"content" : ["*-PL: -*Ik heb wel zin in*- -*Cop Racer 2!", {
+						"divert" : "victorYesKeihard"
+					}, {
+						"flagName" : "actie"
+					}
+				]
+			},
+			"pLWatVindJeVanKe" : {
+				"content" : ["*-PL: -*Wat vind je van kebab?", {
+						"divert" : "victorDaarKrijgJ"
+					}, {
+						"flagName" : "kebab +1"
+					}
+				]
+			},
+			"victorNeeTochAfk" : {
+				"content" : ["*-Victor: -*Nee toch?/= (afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS2"
+					}, {
+						"notIfCondition" : "pauze"
+					}
+				]
+			},
+			"victorWatIsErNog" : {
+				"content" : ["*-Victor: -*Wat is er nog gebeurd? Waarom heb je niet op pauze gedrukt?/= (afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLNiksBelangrijk"
+					}, {
+						"flagName" : "ruzie +1"
+					}, {
+						"notIfCondition" : "pauze"
+					}
+				]
+			},
+			"pHValtInSlaapDeZ" : {
+				"content" : ["/=(PH valt in slaap. De zetel zakt in. Close-up instorting)=/", {
+						"divert" : "victorJezusDatWa"
+					}, {
+						"flagName" : "slaap einde"
+					}, {
+						"ifCondition" : "slaap > 2"
+					}
+				]
+			},
+			"pLDatHijMaarOppa" : {
+				"content" : ["*-PL: -*Dat hij maar oppast. De slechterik met het vreemde accent is nog maar \u00e9\u00e9n kaar doodgegaan.", {
+						"divert" : "victorMaakJeGeen"
+					}
+				]
+			},
+			"victorDatZalOnze1" : {
+				"content" : ["*-Victor: -*Dat zal onze pizza zijn! Zal ik hem gaan halen? /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"option" : "Ja...",
+						"linkPath" : "pLJaDankJe",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Nee...",
+						"linkPath" : "pLNeeIkGaWel",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"notIfCondition" : "ruzie slaap"
+					}
+				]
+			},
+			"pLWatVindJeVanGr" : {
+				"content" : ["*-PL: -*Wat vind je van Grieks?", {
+						"divert" : "victorTzazikiTza"
+					}, {
+						"flagName" : "grieks +1"
+					}
+				]
+			},
+			"pLGeenWonderJeDa" : {
+				"content" : ["*-PL:-* Geen wonder je dat deze film als kind nooit uitgekeken hebt.", {
+						"divert" : "victorEnTochWilI"
+					}
+				]
+			},
+			"pLZoKnapIsDieRoo" : {
+				"content" : ["*-PL: -*Zo knap is die roodharige nu ook weer niet...", {
+						"divert" : "terugCutsceneTvS"
+					}
+				]
+			},
+			"pLKiesJijMaar" : {
+				"content" : ["*-PL:-* Kies jij maar.", {
+						"divert" : "victorMijMaaktHe"
+					}, {
+						"flagName" : "onbeslist +1"
+					}
+				]
+			},
+			"victorEnTochWilI" : {
+				"content" : ["*-Victor:-* En toch wil ik het einde zien!", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS"
+					}
+				]
+			},
+			"pLIkHebWelZinIn" : {
+				"content" : ["*-PL: -*Ik heb wel zin in...", {
+						"option" : "PL: Cop Racer 2",
+						"linkPath" : "pLIkHebWelZinInC",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "PL: Sullen Rain",
+						"linkPath" : "pLSullenRainZieI",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "PL: Three Cats and Wilson the Dog...",
+						"linkPath" : "pLThreeCatsAndWi",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"flagName" : "dominant +1"
+					}
+				]
+			},
+			"pLTuurlijkSchatW" : {
+				"content" : ["*-PL:-* Tuurlijk, schat. Wat denk je, dat ik jaloers zal worden?", {
+						"divert" : "victorDieRoodhar"
+					}
+				]
+			},
+			"pLLekker" : {
+				"content" : ["*-PL:-* lekker!", {
+						"divert" : "victorBedanktOmE"
+					}
+				]
+			},
+			"victorJezusDatWa" : {
+				"content" : ["*-Victor: -*Jezus, dat was schrikken! Sorry dat ik in slaap viel, schat! We zullen morgen naar ikea moeten gaan om ons een nieuwe zetel aan te schaffen. Een mooiere ;)/= (geschrokken)=/", {
+						"image" : "http://i58.tinypic.com/dmv13s.jpg"
+					}, {
+						"divert" : "victorWatVondJeV"
+					}, {
+						"ifCondition" : "actie"
+					}, {
+						"ifCondition" : "slaap > 2"
+					}
+				]
+			},
+			"pLSchatLigJeComf" : {
+				"content" : ["*-PL: -*Schat, lig je comfortabel genoeg? Wil je nog een kussen?", {
+						"divert" : "pHOhBedanktMoe"
+					}, {
+						"flagName" : "slaap +1"
+					}
+				]
+			},
+			"victorJepHetIsAl" : {
+				"content" : ["*-Victor: -*Jep! Het is alsof je mijn gedachten kan lezen! /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}
+				]
+			},
+			"pHHmmm" : {
+				"content" : ["*-PH: -*Hmmm...", {
+						"divert" : "terugCutsceneTvS3"
+					}
+				]
+			},
+			"pLMisschienIsHet" : {
+				"content" : ["*-PL: -*Misschien is het dat waar de hoofdhark naar op zoek is elke keer dat hij minutenlang in de verte staart.", {
+						"divert" : "victorWeddenDatZ"
+					}
+				]
+			},
+			"pLNeeMaarZoMoeil" : {
+				"content" : ["*-PL: -*Nee, maar zo moeilijk is het niet he, het is al van in het begin duidelijk.", {
+						"divert" : "pHMijnExcusesPro"
+					}
+				]
+			},
+			"pLIets" : {
+				"content" : ["*-PL: -*\"Iets\"?", {
+						"divert" : "victorZeHeeftMoo"
+					}
+				]
+			},
+			"pLWatVindJeVanSu" : {
+				"content" : ["*-PL: -*Wat vind je van sushi?", {
+						"divert" : "victorHebbenWeVo"
+					}, {
+						"flagName" : "sushi +1"
+					}
+				]
+			},
+			"pHHaaltSmartphon" : {
+				"content" : ["/=(PH haalt smartphone boven en begint wat te tokkelen)=/", {
+						"divert" : "terugCutsceneTvS3"
+					}
+				]
+			},
+			"victorWatKunnenW" : {
+				"content" : ["*-Victor: -*Wat kunnen we nog bestellen? /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "indisch > 1"
+					}
+				]
+			},
+			"pLEnorm" : {
+				"content" : ["*-PL:-* Enorm. ", {
+						"divert" : "victorIkBenOokOn"
+					}
+				]
+			},
+			"victorIkWasTrouw" : {
+				"content" : ["*-Victor: -*Ik was trouwens aan het denken aan de koffietafel. Ik ben er wel aan gehecht, maar je hebt gelijk: ze is wel een beetje lelijk. Zullen we morgen een nieuwe gaan kopen? /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLJaFijn"
+					}, {
+						"notIfCondition" : "slaap einde"
+					}, {
+						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"terugCutsceneTvS3" : {
+				"content" : ["/=(terug cutscene tv scherm filmkeuze, afstandsbediening in de hoek, aftiteling)=/", {
+						"divert" : "victorJezusIkKri"
+					}, {
+						"pageNum" : 6
+					}
+				]
+			},
+			"victorPizzaIsGoe" : {
+				"content" : ["*--**-Victor: -*Pizza is goed. Ik bestel hem wel./=(nerveus) =/", {
+						"image" : "http://i57.tinypic.com/apbt5z.jpg"
+					}, {
+						"divert" : "victorZiezoStart"
+					}
+				]
+			},
+			"victorDieRoodhar" : {
+				"content" : ["*-Victor: -*Die roodharige heeft wel iets. /=(vriendelijk) =/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLIets"
+					}
+				]
+			},
+			"pLSstSchatIkProb" : {
+				"content" : ["*-PL:-* Sst schat, ik probeer te volgen. Hier, neem nog een kussen.", {
+						"divert" : "pHHmmm"
+					}, {
+						"flagName" : "slaap +1"
+					}
+				]
+			},
+			"victorTuurlijkSc" : {
+				"content" : ["*-Victor:-* Tuurlijk, schat. Dat is wel Broes Wiels h\u00e8, een keiharde flik die lak heeft aan de wet, de regels, en aan pijn. /=(lachend)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLDatHijMaarOppa"
+					}
+				]
+			},
+			"pLWeZullenZien" : {
+				"content" : ["*-PL:-* We zullen zien!", {
+						"divert" : "terugCutsceneTvS"
+					}
+				]
+			},
+			"pHMijnExcusesPro" : {
+				"content" : ["*-PH:-* Mijn excuses, professor in de film. ", {
+						"divert" : "pHHaaltSmartphon"
+					}
+				]
+			},
+			"pLWauwWatEenSupe" : {
+				"content" : ["*-PL: -*Wauw, wat een superflik! Ondertussen al dertig keer geraakt en hij staat nog steeds recht!", {
+						"divert" : "victorTuurlijkSc"
+					}
+				]
+			},
+			"victorVoorMijIsO" : {
+				"content" : ["*-Victor:-* Voor mij is ook elk excuus goed om tegen je aan te kunnen liggen. /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLMijnDiertjeWat"
+					}, {
+						"notIfCondition" : "slaap einde"
+					}, {
+						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"pLIkHebErOokGeen" : {
+				"content" : ["*-PL: -*Ik heb er ook geen flauw idee van\u2026", {
+						"divert" : "victorWieHadVerw"
+					}
+				]
+			},
+			"pLZieJeDatOokJeZ" : {
+				"content" : ["*-PL: -*Zie je dat ook? Je ziet zo dat er een hand in de reet van die neppe hond zit.", {
+						"divert" : "victorErZitMeerD"
+					}
+				]
+			},
+			"pLWatVindJeVanIn" : {
+				"content" : ["*-PL:-* Wat vind je van Indisch?", {
+						"divert" : "victorIndischSch"
+					}, {
+						"flagName" : "indisch +1"
+					}
+				]
+			},
+			"pLJaFijn" : {
+				"content" : ["*-PL:-* Ja fijn!", {
+						"notIfCondition" : "slaap einde"
+					}
+				]
+			},
+			"pLWatVindJeVanPi1" : {
+				"content" : ["*-PL: -*Wat vind je van pizza?", {
+						"divert" : "victorPizzaIsMis"
+					}
+				]
+			},
+			"victorHetIsAltij" : {
+				"content" : ["*-Victor:-* Het is altijd pizza\u2026 /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}
+				]
+			},
+			"victorIkBenOokOn" : {
+				"content" : ["*-Victor:-* Ik ben ook ontgoocheld. Nog geen enkel theekopje gezien! /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLMisschienIsHet"
+					}
+				]
+			},
+			"victorBedanktOmE" : {
+				"content" : ["*-Victor: -*Bedankt om even te pauzeren. /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "victorWatIsErNog"
+					}, {
+						"ifCondition" : "pauze"
+					}
+				]
+			},
+			"victorWaaromZijn" : {
+				"content" : ["*-Victor: -*Waarom zijn ze nu ineens terug {actie:in die verlaten fabriek} {drama:in die paardenstal} {komedie:bij die vuilnisbakken}?/= (afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLEhZeWarenDaarT"
+					}, {
+						"notIfCondition" : "pauze"
+					}
+				]
+			},
+			"pLWatVindJeVanPi" : {
+				"content" : ["*-PL: -*Wat vind je van pizza?", {
+						"divert" : "victorHetIsAltij"
+					}, {
+						"flagName" : "pizza +1"
+					}
+				]
+			},
+			"victorSorryDatIk" : {
+				"content" : ["*-Victor:-* Sorry dat ik uitvloog en dat ik de lamp heb gebroken. Laten we morgen naar Ikea gaan en een nieuwe halen. Een mooiere ;)/= (vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "victorZzzzzSlape"
+					}, {
+						"ifCondition" : "ruzie > 2"
+					}
+				]
+			},
+			"victorZiezoStart" : {
+				"content" : ["*-Victor: -*Ziezo. Start jij de film schat? /=(vriendelijk)=/ /=(je ziet tv scherm en afstandsbediening, druk op play, je ziet cutscene gekozen film) =/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "terugVanCutscene"
+					}
+				]
+			},
+			"victorSchatIkBen" : {
+				"content" : ["*-Victor:-* Schat, ik ben thuis! En ik ben bekaf... /=(moe)=/", {
+						"image" : "http://i57.tinypic.com/16aqwax.jpg"
+					}, {
+						"divert" : "pLZullenWeGezell"
+					}
+				]
+			},
+			"pLNietZoFantasti" : {
+				"content" : ["*-PL: -*Niet zo fantastisch, in tegenstelling tot het gezelschap ;)", {
+						"divert" : "victorVoorMijIsO"
+					}, {
+						"notIfCondition" : "slaap einde"
+					}, {
+						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"pLWatZullenWeKij" : {
+				"content" : ["*-PL: -*Wat zullen we kijken?*--*", {
+						"divert" : "victorCopRacerKe"
+					}
+				]
+			},
+			"victorPizzaIsMis" : {
+				"content" : ["*-Victor: -*Pizza is misschien toch niet zo'n slecht idee. Ik bestel hem wel even. /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "victorZiezoStart"
+					}
+				]
+			},
+			"victorErZitMeerD" : {
+				"content" : ["*-Victor:-* Er zit meer diepgang in deze film dan ik me herinnerde ;) Die hand zit trouwens in de verkeerde opening. Wanneer houdt die neppe hond nou eindelijk eens zijn bek dicht?", {
+						"image" : "http://i62.tinypic.com/ka3brt.jpg"
+					}, {
+						"divert" : "pLGeenWonderJeDa"
+					}
+				]
+			},
+			"maandag" : {
+				"content" : ["Maandag", {
+						"divert" : "victorSchatIkBen"
+					}, {
+						"pageNum" : 1
+					}
+				]
+			},
+			"pHOhBedanktMoe" : {
+				"content" : ["*-PH: -*Oh, bedankt! /=(moe) =/", {
+						"image" : "http://i57.tinypic.com/16aqwax.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS"
+					}
+				]
+			},
+			"victorBenJeZeker" : {
+				"content" : ["*-Victor: -*Ben je zeker dat je daar een antwoord op wil?/= (nerveus)=/", {
+						"image" : "http://i57.tinypic.com/apbt5z.jpg"
+					}, {
+						"divert" : "pLTuurlijkSchatW"
+					}
+				]
+			},
+			"pHGaatWegEnStoot" : {
+				"content" : ["/=(PH gaat weg en stoot de lamp naast de zetel per ongeluk omver. Close-up lamp) Hij stuurt je pas na x uur een bericht.=/", {
+						"divert" : "victorSorryDatIk"
+					}, {
+						"ifCondition" : "ruzie > 2"
+					}
+				]
+			},
+			"pLWatVindJeVan" : {
+				"content" : ["*-PL: -*Wat vind je van...", {
+						"option" : "Pizza?",
+						"linkPath" : "pLWatVindJeVanPi",
+						"ifConditions" : [{
+								"ifCondition" : "pizza = 0"
+							}
+						],
+						"notIfConditions" : null
+					}, {
+						"option" : "Pizza?",
+						"linkPath" : "pLWatVindJeVanPi1",
+						"ifConditions" : [{
+								"ifCondition" : "pizza >0"
+							}
+						],
+						"notIfConditions" : null
+					}, {
+						"option" : "Sushi?",
+						"linkPath" : "pLWatVindJeVanSu",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Indisch?",
+						"linkPath" : "pLWatVindJeVanIn",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Kebab?",
+						"linkPath" : "pLWatVindJeVanKe",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Grieks?",
+						"linkPath" : "pLWatVindJeVanGr",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Chinees?",
+						"linkPath" : "pLWatVindJeVanCh",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Kies jij maar...",
+						"linkPath" : "pLKiesJijMaar",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Wil je nu g#dverd#mme...",
+						"linkPath" : "pLWilJeNuGdverdm",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}
+				]
+			},
+			"victorOkWeZijnVo" : {
+				"content" : ["*-Victor: -*Ok, we zijn voorzien. /=(vriendelijk) =/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLLekker"
+					}
+				]
+			},
+			"victorHebbenWeVo" : {
+				"content" : ["*-Victor: -*Hebben we vorige week al gegeten, toch?/=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "victorIsErEchtNi"
+					}, {
+						"ifCondition" : "sushi = 1"
+					}
+				]
+			},
+			"victorIndischSch" : {
+				"content" : ["*-Victor: -*Indisch schmindisch. /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "victorWatKunnenW"
+					}, {
+						"ifCondition" : "indisch = 1"
+					}
+				]
+			},
+			"pLThreeCatsAndWi" : {
+				"content" : ["*-PL: -*Three cats and Wilson the Dog ziet er wel leuk uit.", {
+						"divert" : "pHDieHerinnerIkM"
+					}, {
+						"flagName" : "komedie"
+					}, {
+						"flagName" : "slaap +1"
+					}
+				]
+			},
+			"victorTzazikiTza" : {
+				"content" : ["*-Victor: -*Tzaziki? Tza zie ik niet zitti! /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "victorNeeDatViel"
+					}, {
+						"ifCondition" : "grieks = 1"
+					}
+				]
+			},
+			"victorBritseHark" : {
+				"content" : ["*-Victor:-* ... Britse harken die elkaar onterven wanneer ze hun theekopje niet recht genoeg houden? Blurgh... Vooruit dan maar... /=(afkeurend) =/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLZullenWeMeteen"
+					}
+				]
+			},
+			"victorDieSalonta" : {
+				"content" : ["*-Victor: -*Die salontafel heeft emotionele waarde! En natuurlijk zijn actrices aantrekkelijk. Maar jij bent ook heel aantrekkelijk. Het is onfair om actrices te vergelijken met gewone vrouwen./= (afkeurend) =/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLGewoon"
+					}
+				]
+			},
+			"pLHeeSlaapJe" : {
+				"content" : ["*-PL: -*Hee, slaap je?", {
+						"image" : "http://i57.tinypic.com/a3l7qg.jpg"
+					}, {
+						"divert" : "victorHmmHmmmNee"
+					}
+				]
+			},
+			"victorIsErEchtNi" : {
+				"content" : ["*-Victor: -*Is er echt niets anders?/= (afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "sushi >1"
+					}
+				]
+			},
+			"terugNaarSchermM" : {
+				"content" : ["/=(terug naar scherm met character, hij lijkt een beetje in te dommelen, en schiet plots wakker van de bel: DING DONG) (moe) (geschrokken)=/", {
+						"divert" : "victorDatZalOnze"
+					}, {
+						"pageNum" : 4
+					}
+				]
+			},
+			"terugCutsceneTvS1" : {
+				"content" : ["/=(terug cutscene tv scherm filmkeuze, afstandsbediening in de hoek, twee seconden)=/", {
+						"option" : "(Pauzeer film)",
+						"linkPath" : "terugNaarSchermM1",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "(Pauzeer film niet)",
+						"linkPath" : "terugNaarSchermM1",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}
+				]
+			},
+			"victorDaarKrijgJ" : {
+				"content" : ["*-Victor: -*Daar krijg je toch vaak\u2026 lucht van? /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "victorPrrrrrrrrt"
+					}, {
+						"ifCondition" : "kebab = 1"
+					}
+				]
+			},
+			"pLSullenRainZieI" : {
+				"content" : ["*-PL: -*Sullen Rain zie ik wel zitten... \"Een sfeervol kostuumdrama met ...\"", {
+						"divert" : "victorBritseHark"
+					}, {
+						"flagName" : "drama"
+					}, {
+						"flagName" : "slaap + 1"
+					}
+				]
+			},
+			"pLWakkerWordenOm" : {
+				"content" : ["*-PL: -*Wakker worden! Omdat zij het zelf gedaan heeft natuurlijk! Ze probeert iedereen te misleiden.", {
+						"divert" : "pHSorryDatIkHetV"
+					}, {
+						"flagName" : "ruzie +1"
+					}
+				]
+			},
+			"victorSchatJijBe" : {
+				"content" : ["*-Victor: -*Schat, jij bent minstens even aantrekkelijk dan die roodharige of eender welke andere actrice./= (vriendelijk) =/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLZoKnapIsDieRoo"
+					}
+				]
+			},
+			"pLWatVindJeVanCh" : {
+				"content" : ["*-PL: -*Wat vind je van Chinees?", {
+						"divert" : "victorDaarHebIkN"
+					}, {
+						"flagName" : "chinees +1"
+					}
+				]
+			},
+			"terugCutsceneTvS" : {
+				"content" : ["/=(terug cutscene tv scherm filmkeuze, afstandsbediening in de hoek)=/", {
+						"runOn" : true
+					}, {
+						"divert" : "terugNaarSchermM"
+					}, {
+						"pageNum" : -1
+					}
+				]
+			},
+			"victorMaakJeGeen" : {
+				"content" : ["*-Victor:-* Maak je geen zorgen. Die valt zo meteen in \u00e9\u00e9n van de vele plotgaten. /=(lachend)=/", {
+						"image" : "http://i62.tinypic.com/ka3brt.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS"
+					}
+				]
+			},
+			"victorGoedIdeeVr" : {
+				"content" : ["*-Victor: -*Goed idee! /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"option" : "PL: Wat zullen we kijken?",
+						"linkPath" : "pLWatZullenWeKij",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "PL: Ik heb wel zin in...",
+						"linkPath" : "pLIkHebWelZinIn",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}
+				]
+			},
+			"victorZzzzzSlape" : {
+				"content" : ["*-Victor: -*Zzzzz... /=(slapend)=/", {
+						"image" : "http://i57.tinypic.com/a3l7qg.jpg"
+					}, {
+						"divert" : "pLSchat"
+					}, {
+						"ifCondition" : "slaap > 2"
+					}
+				]
+			},
+			"pLWieVindJijDeKn" : {
+				"content" : ["*-PL: -*Wie vind jij de knapste?", {
+						"divert" : "victorBenJeZeker"
+					}, {
+						"flagName" : "ruzie +1"
+					}
+				]
+			},
+			"victorPrrrrrrrrt" : {
+				"content" : ["*-Victor: -*Prrrrrrrrt! /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "kebab > 1"
+					}
+				]
+			},
+			"victorSfeervolBe" : {
+				"content" : ["*-Victor: -*Sfeervol, bedoel je? /=(lachend)=/", {
+						"image" : "http://i62.tinypic.com/ka3brt.jpg"
+					}, {
+						"divert" : "pLEnorm"
+					}
+				]
+			},
+			"pLMijnDiertjeWat" : {
+				"content" : ["*-PL-*: Mijn diertje, wat ben je toch lief!", {
+						"divert" : "victorIkWasTrouw"
+					}, {
+						"notIfCondition" : "slaap einde"
+					}, {
+						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"pLWatEenTrageBed" : {
+				"content" : ["*-PL:-* Wat een trage bedoening.", {
+						"divert" : "victorSfeervolBe"
+					}
+				]
+			},
+			"pHDieHerinnerIkM" : {
+				"content" : ["*-PH: -*Die herinner ik me nog uit mijn kindertijd. Ik viel toen altijd in slaap\u2026 Misschien dat ik nu eindelijk eens het einde te zien krijg! /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLZullenWeMeteen"
+					}
+				]
+			},
+			"cutawayNaarDeurD" : {
+				"content" : ["/=(cutaway naar deur die opengaat en pizza bezorger, close ups van handen met pizza, handen met geld)=/", {
+						"divert" : "pLHeeSlaapJe"
+					}
+				]
+			},
+			"pLZullenWeGezell" : {
+				"content" : ["*-PL: -*Zullen we gezellig een film kijken thuis? Als je dat volhoudt tenminste... :) /=(TAAK verschijnt: zorgen dat je PH niet in slaap valt tijdens de film)=/", {
+						"divert" : "victorGoedIdeeVr"
+					}
+				]
+			},
+			"pLWilJeNuGdverdm" : {
+				"content" : ["*-PL: -*Wil je nu g#dverd#mme een keuze maken\u00a0zodat we aan onze ontspannende avond kunnen beginnen?", {
+						"divert" : "victorPizzaIsGoe"
+					}, {
+						"flagName" : "ruzie +1"
+					}
+				]
+			},
+			"victorEhIkBedoel" : {
+				"content" : ["*-Victor:-* Eh...  Ik bedoel natuurlijk niet dat jij \"gewoon\" bent./= (nerveus)=/", {
+						"image" : "http://i57.tinypic.com/apbt5z.jpg"
+					}, {
+						"divert" : "pLNeenNatuurlijk"
+					}
+				]
+			},
+			"victorWeddenDatZ" : {
+				"content" : ["*-Victor: -*Wedden dat ze de liefde hun klasseverschil uiteindelijk overwint?", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLWeZullenZien"
+					}
+				]
+			},
+			"victorHmmHmmmNee" : {
+				"content" : ["*-Victor: -*Hmm... Hmmm? Neen, tuurlijk niet! Ik liet mijn ogen even rusten. Mmm pizza!/= (moe)=/", {
+						"image" : "http://i57.tinypic.com/16aqwax.jpg"
+					}, {
+						"divert" : "pHHeeftStukPizza"
+					}
+				]
+			},
+			"pLJaDankJe" : {
+				"content" : ["*-PL: -*Ja, dank je.", {
+						"divert" : "victorIkHoopDatI"
+					}
+				]
+			},
+			"pHSorryDatIkHetV" : {
+				"content" : ["*-PH: -*Sorry dat ik het vroeg\u2026 Heb jij \u2018m al gezien dan?", {
+						"divert" : "pLNeeMaarZoMoeil"
+					}
+				]
+			},
+			"pLEhZeWarenDaarT" : {
+				"content" : ["*-PL: -*Eh, ze waren daar toch al?", {
+						"divert" : "victorNeeTochAfk"
+					}, {
+						"notIfCondition" : "pauze"
+					}
+				]
+			},
+			"victorDaarHebIkN" : {
+				"content" : ["*-Victor: -*Daar heb ik nu eens echt geen zin in. /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "VictorNeeAfkeure"
+					}, {
+						"ifCondition" : "chinees = 1"
+					}
+				]
+			},
+			"VictorNeeAfkeure" : {
+				"content" : ["*- Victor: -*Nee. /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "chinees > 1"
+					}
+				]
+			},
+			"pLNiksBelangrijk" : {
+				"content" : ["*-PL: -*Niks belangrijk, je hebt niets gemist.", {
+						"divert" : "victorWaaromZijn"
+					}, {
+						"notIfCondition" : "pauze"
+					}
+				]
+			},
+			"victorYesKeihard" : {
+				"content" : ["*-Victor: -*Yes! Keiharde actie! /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLZullenWeMeteen"
+					}
+				]
+			},
+			"terugVanCutscene" : {
+				"content" : ["/=(terug van cutscene  naar character)=/", {
+						"option" : "Wie vind jij de knapste?",
+						"linkPath" : "pLWieVindJijDeKn",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Wauw, wat een superflik!",
+						"linkPath" : "pLWauwWatEenSupe",
+						"ifConditions" : [{
+								"ifCondition" : "actie"
+							}
+						],
+						"notIfConditions" : null
+					}, {
+						"option" : "Wat een trage bedoening.",
+						"linkPath" : "pLWatEenTrageBed",
+						"ifConditions" : [{
+								"ifCondition" : "drama"
+							}
+						],
+						"notIfConditions" : null
+					}, {
+						"option" : "Zie je dat ook?",
+						"linkPath" : "pLZieJeDatOokJeZ",
+						"ifConditions" : [{
+								"ifCondition" : "komedie"
+							}
+						],
+						"notIfConditions" : null
+					}, {
+						"option" : "Schat, lig je comfortabel genoeg?",
+						"linkPath" : "pLSchatLigJeComf",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"pageNum" : 3
+					}
+				]
+			},
+			"victorJezusIkKri" : {
+				"content" : ["*-Victor:-* Jezus, ik krijg nog liever diarree dan met jou een film te kijken! Laat zitten, ik ben weg. /=(boos) =/", {
+						"image" : "http://i58.tinypic.com/flesjk.jpg"
+					}, {
+						"divert" : "pHGaatWegEnStoot"
+					}, {
+						"flagName" : "ruzie einde"
+					}, {
+						"ifCondition" : "ruzie > 2"
+					}
+				]
+			},
+			"pHHeeftStukPizza" : {
+				"content" : ["/=(PH heeft stuk pizza in de hand)=/", {
+						"divert" : "terugCutsceneTvS2"
+					}
+				]
+			},
+			"pLNeeIkGaWel" : {
+				"content" : ["*-PL: -*Nee, ik ga wel.", {
+						"divert" : "cutawayNaarDeurD"
+					}, {
+						"flagName" : "slaap +1"
+					}
+				]
+			},
+			"victorPffIkHebEc" : {
+				"content" : ["*-Victor: -*Pff. Ik heb echt geen inspiratie. /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "onbeslist > 1"
+					}
+				]
+			},
+			"victorZeHeeftMoo" : {
+				"content" : ["*-Victor: -*Ze heeft mooie ogen. Verder niet echt mijn type eigenlijk. /=(nerveus) =/", {
+						"image" : "http://i57.tinypic.com/apbt5z.jpg"
+					}, {
+						"divert" : "pLZegJeMagBestTo"
+					}
+				]
+			},
+			"pLZegJeMagBestTo" : {
+				"content" : ["*-PL: -*Zeg, je mag best toegeven dat je andere vrouwen aantrekkelijk vindt, hoor. Zoals ik mag toegeven dat onze salontafel op niks trekt!", {
+						"divert" : "victorDieSalonta"
+					}
+				]
+			},
+			"victorNeeDatViel" : {
+				"content" : ["*-Victor: -*Nee, dat viel laatst behoorlijk tegen... /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "pLWatVindJeVan"
+					}, {
+						"ifCondition" : "grieks > 1"
+					}
+				]
+			},
+			"pLZullenWeMeteen" : {
+				"content" : ["*-PL: -*Zullen we meteen ook wat te eten bestellen? Dan hoeven we niet te koken.", {
+						"divert" : "victorJepHetIsAl"
+					}, {
+						"pageNum" : 2
+					}
+				]
+			},
+			"terugNaarSchermM1" : {
+				"content" : ["/=(terug naar scherm met character, stuk pizza in de hand)=/", {
+						"divert" : "victorOkWeZijnVo"
+					}
+				]
+			},
+			"pHZegMaarWaaromV" : {
+				"content" : ["*-PH: -*Zeg maar, waarom verdenkt zij {actie:Broes Wiels} {drama:die hark} {komedie:Wilson} ervan... /=(afkeurend)=/", {
+						"runOn" : true
+					}, {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"option" : "Geen flauw idee",
+						"linkPath" : "pLIkHebErOokGeen",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Wakker worden!",
+						"linkPath" : "pLWakkerWordenOm",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"option" : "Sst schat,...",
+						"linkPath" : "pLSstSchatIkProb",
+						"ifConditions" : null,
+						"notIfConditions" : null
+					}, {
+						"pageNum" : 5
+					}
+				]
+			},
+			"victorIkHoopDatI" : {
+				"content" : ["*-Victor:-* Ik hoop dat ik niets interessants mis! /=(vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "terugCutsceneTvS1"
+					}
+				]
+			},
+			"terugCutsceneTvS2" : {
+				"content" : ["/=(terug cutscene tv scherm filmkeuze, afstandsbediening in de hoek)=/", {
+						"divert" : "pHZegMaarWaaromV"
+					}, {
+						"pageNum" : -1
+					}
+				]
+			},
+			"pLGewoon" : {
+				"content" : ["*-PL:-* \"Gewoon\"?", {
+						"divert" : "victorEhIkBedoel"
+					}
+				]
+			},
+			"pLSchat" : {
+				"content" : ["*-PL: -*Schat?", {
+						"divert" : "pHValtInSlaapDeZ"
+					}, {
+						"ifCondition" : "slaap > 2"
+					}
+				]
+			},
+			"victorDatZalOnze" : {
+				"content" : ["*-Victor: -*Dat zal onze pizza zijn! Zal ik hem gaan halen?/= (vriendelijk)=/", {
+						"image" : "http://i60.tinypic.com/20ur637.jpg"
+					}, {
+						"divert" : "victorDatZalOnze1"
+					}, {
+						"flagName" : "ruzie slaap"
+					}, {
+						"ifCondition" : "ruzie > 1"
+					}, {
+						"ifCondition" : "slaap >1"
+					}
+				]
+			},
+			"victorCopRacerKe" : {
+				"content" : ["*-Victor: -*Cop Racer 2! Keiharde actie! /=(enthousiast)=/", {
+						"image" : "http://i62.tinypic.com/2jca3ip.jpg"
+					}, {
+						"divert" : "pLZullenWeMeteen"
+					}, {
+						"flagName" : "actie"
+					}
+				]
+			}
+		},
+		"optionMirroring" : true
+	}
+}
