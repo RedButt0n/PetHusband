@@ -25,16 +25,19 @@ public class PHParagraph : MonoBehaviour {
 
 	private bool enableNextButton = true;
 
+	private GlobalVarContainer globalVarContainer;
+
 	void Start()
 	{
-		Debug.Log("Start");
+		//Debug.Log("Start");
 		nextButton.gameObject.SetActive(enableNextButton);
 		optionButton.gameObject.SetActive (false);
 	}
 
 	public void SetText (Paragraph paragraph, Option chosenOption, string prevImage)
 	{
-		Debug.Log ("SetText PHParagraph");
+		//Debug.Log ("SetText PHParagraph");
+		globalVarContainer = GameObject.Find("GlobalVarContainer").GetComponent<GlobalVarContainer>();
 		text.gameObject.SetActive (false);
 
 		var obj = Instantiate (text.gameObject) as GameObject;
@@ -64,7 +67,7 @@ public class PHParagraph : MonoBehaviour {
 			} else
 			{
 				image.gameObject.SetActive(false);
-				Debug.Log("No image name provided!");
+				//Debug.Log("No image name provided!");
 			}
 		}
 	}
@@ -162,17 +165,17 @@ public class PHParagraph : MonoBehaviour {
 		var imageName = FileNameWithoutExtension (rawImageName);
 		var sprite = Resources.Load<Sprite> (imageName);
 		if (sprite) {
-			Debug.Log("image name: " + imageName);
+			//Debug.Log("image name: " + imageName);
 			image.sprite = sprite;
 		} else
 		{
-			Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
+			//Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
 		}
 	}
 
 	string ProcessText(string text)
 	{
-		string processText = text.Replace("%naam%","TempSpelerNaam");
+		string processText = text.Replace("%naam%",globalVarContainer._playerName);
 		return processText;
 	}
 }
