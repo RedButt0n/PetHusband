@@ -6,6 +6,7 @@ public class SelectedHusbandController : MonoBehaviour {
 
 	//These are needed to connect to the Image & Text objects in the scene
 	public Image _husbandImage;
+	public Text _husbandName;
 	public Text _husbandDescription;
 
 	public GameObject[] _husbandlist;				//List of all available husbands
@@ -19,14 +20,17 @@ public class SelectedHusbandController : MonoBehaviour {
 		UpdateHusband();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-		if (Input.GetMouseButtonUp (0)) {
-			AdvanceInList();
-			UpdateHusband();
-		}
+
+	public void PressNext()
+	{
+		AdvanceInList ();
+		UpdateHusband ();
+	}
+
+	public void PressPrevious()
+	{
+		GoBackInList ();
+		UpdateHusband ();
 	}
 
 	private void AdvanceInList() {
@@ -36,8 +40,16 @@ public class SelectedHusbandController : MonoBehaviour {
 			_selectedNumber = 0;
 	}
 
+	private void GoBackInList() {
+		if (_selectedNumber != 0)
+			--_selectedNumber;
+		else
+			_selectedNumber = _amountOfHusbands;
+	}
+
 	public void UpdateHusband() {
 		_selectedHusband = _husbandlist [_selectedNumber].GetComponent<HusbandProperties> ();
+		_husbandName.text = _selectedHusband._name;
 		_husbandDescription.text = _selectedHusband._description;
 		_husbandImage.sprite = _selectedHusband._image;
 	}
