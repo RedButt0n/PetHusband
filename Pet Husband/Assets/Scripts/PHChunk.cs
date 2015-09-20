@@ -10,15 +10,17 @@ public class PHChunk : MonoBehaviour {
 	List<GameObject> paragraphs = new List<GameObject> ();
 	int activeParagraphIndex = 0;
 
-	public void Set (PlayChunk chunk, Option chosenOption, PetHusbandPlayer player)
+	public void Set (PlayChunk chunk, Option chosenOption, PetHusbandPlayer player, string prevChunkImage)
 	{
 		activeParagraph.gameObject.SetActive (false);
+		string prevImage = prevChunkImage;
 		foreach (var p in chunk.Paragraphs) {
 			var newParagraph = Instantiate (activeParagraph) as GameObject;
 			newParagraph.SetActive (false);
 			newParagraph.transform.SetParent (activeParagraph.transform.parent,false);
 			var paragraphComponent = newParagraph.GetComponent<PHParagraph>();
-			paragraphComponent.SetText(p,chosenOption);
+			paragraphComponent.SetText(p,chosenOption,prevImage);
+			prevImage = paragraphComponent.GetImageName();
 			paragraphs.Add(newParagraph);
 		}
 
@@ -61,5 +63,10 @@ public class PHChunk : MonoBehaviour {
 		foreach (var o in options) {
 			o.Disable ();
 		}*/
+	}
+
+	public string GetLastShownImage()
+	{
+		return activeParagraph.GetComponent<PHParagraph>().GetImageName();
 	}
 }

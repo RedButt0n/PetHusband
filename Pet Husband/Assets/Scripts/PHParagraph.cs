@@ -32,7 +32,7 @@ public class PHParagraph : MonoBehaviour {
 		optionButton.gameObject.SetActive (false);
 	}
 
-	public void SetText (Paragraph paragraph, Option chosenOption)
+	public void SetText (Paragraph paragraph, Option chosenOption, string prevImage)
 	{
 		Debug.Log ("SetText PHParagraph");
 		text.gameObject.SetActive (false);
@@ -54,15 +54,18 @@ public class PHParagraph : MonoBehaviour {
 		//Set Image
 		if (!string.IsNullOrEmpty (paragraph.Image)) {
 			// Get file name without extension
-			var imageName = FileNameWithoutExtension (paragraph.Image);
-			var sprite = Resources.Load<Sprite> (imageName);
-			if (sprite) {
-				image.sprite = sprite;
-				image.SetNativeSize ();
-			}
+			ConstructImage (paragraph.Image);
 		} else
 		{
-			image.gameObject.SetActive(false);
+			//If there is no image for this paragraph, use the image of the previous paragraph
+			if(!string.IsNullOrEmpty (prevImage))
+			{
+				ConstructImage (prevImage);
+			} else
+			{
+				image.gameObject.SetActive(false);
+				Debug.Log("No image name provided!");
+			}
 		}
 	}
 
@@ -134,6 +137,36 @@ public class PHParagraph : MonoBehaviour {
 	{
 		var pattern = @"[^/]*(?=\.[^.]+($|\?))";
 		var match = Regex.Match (path, pattern);
-		return match.Groups[0].Value;
+		if(match.Success)
+		{
+			return match.Groups[0].Value;
+		} else
+		{
+			return path;
+		}
+	}
+
+	public string GetImageName()
+	{
+		string imageName = "";
+		if(image.sprite != null)
+		{
+			imageName = image.sprite.name;
+		}
+
+		return imageName;
+	}
+
+	void ConstructImage (string rawImageName)
+	{
+		var imageName = FileNameWithoutExtension (rawImageName);
+		var sprite = Resources.Load<Sprite> (imageName);
+		if (sprite) {
+			Debug.Log("image name: " + imageName);
+			image.sprite = sprite;
+		} else
+		{
+			Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
+		}
 	}
 }

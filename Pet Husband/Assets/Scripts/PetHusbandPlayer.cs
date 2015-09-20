@@ -43,7 +43,8 @@ public class PetHusbandPlayer : MonoBehaviour {
 		chunkObj.SetActive (true);
 		chunkObj.transform.SetParent (chunk.transform.parent,false);
 		var chunkComponent = chunkObj.GetComponent<PHChunk> ();
-		chunkComponent.Set (c, chosenOption, this);
+		string prevImage = activeChunk.GetLastShownImage();
+		chunkComponent.Set (c, chosenOption, this,prevImage);
 		chunks.Add (chunkComponent);
 		activeChunk = chunkComponent;
 		
