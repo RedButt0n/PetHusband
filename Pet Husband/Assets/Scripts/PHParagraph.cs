@@ -41,7 +41,7 @@ public class PHParagraph : MonoBehaviour {
 		obj.SetActive (true);
 		obj.transform.SetParent (text.transform.parent,false);
 		//obj.GetComponent<TextBlock> ().Set (paragraph);
-		obj.GetComponent<Text>().text = paragraph.Text;
+		obj.GetComponent<Text>().text = ProcessText(paragraph.Text);
 		//text.text = paragraph.Text;
 			
 		/*if (chosenOption != null) {
@@ -168,5 +168,11 @@ public class PHParagraph : MonoBehaviour {
 		{
 			Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
 		}
+	}
+
+	string ProcessText(string text)
+	{
+		string processText = text.Replace("%naam%","TempSpelerNaam");
+		return processText;
 	}
 }
