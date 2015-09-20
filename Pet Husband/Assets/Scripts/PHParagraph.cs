@@ -188,10 +188,19 @@ public class PHParagraph : MonoBehaviour {
 	string ExtractTask(string text)
 	{
 		//text += "<taak>Zorg dat hij niet in slaap valt.</taak>";
-
 		string outputText = text;
 
 		string taskText = ExtractDataBetweenTags(ref outputText, "<taak>", "</taak>", true);
+	
+		if(!string.IsNullOrEmpty(taskText))
+		{
+			var taskBehaviour = GameObject.Find("Task").GetComponent<TaskBehavior>();
+			if(taskBehaviour != null)
+			{
+				taskBehaviour.SetText(taskText);
+				taskBehaviour.ShowFirstTime();
+			}
+		}
 
 		return outputText;
 	}

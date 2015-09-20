@@ -60,4 +60,9 @@ public class TaskBehavior : MonoBehaviour {
 		_bgImgComponent.enabled = true;
 		_counter = 0.0f;
 	}
+
+	public void SetText(string text)
+	{
+		_textComponent.text = text;
+	}
 }
