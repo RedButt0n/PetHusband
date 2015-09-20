@@ -175,7 +175,48 @@ public class PHParagraph : MonoBehaviour {
 
 	string ProcessText(string text)
 	{
-		string processText = text.Replace("%naam%",globalVarContainer._playerName);
+		string processText = ReplacePlayerName(text);
+		processText = ExtractTask(processText);
 		return processText;
 	}
+
+	string ReplacePlayerName(string text)
+	{
+		return text.Replace("%naam%",globalVarContainer._playerName);
+	}
+
+	string ExtractTask(string text)
+	{
+		//text += "<taak>Zorg dat hij niet in slaap valt.</taak>";
+
+		string outputText = text;
+
+		string taskText = ExtractDataBetweenTags(ref outputText, "<taak>", "</taak>", true);
+
+		return outputText;
+	}
+
+	string ExtractDataBetweenTags(ref string text, string beginTag, string endTag, bool removeTagsFromText = false)
+	{
+		string outputText = string.Empty;
+		if(text.Contains(beginTag))
+		{
+			int beginTagIndex = text.IndexOf(beginTag);
+			int endTagIndex = text.IndexOf(endTag);
+			
+			outputText = text.Substring(beginTagIndex + beginTag.Length, endTagIndex - (beginTagIndex + beginTag.Length));
+
+			if(removeTagsFromText)
+			{
+				text = text.Remove(beginTagIndex,endTagIndex+endTag.Length - beginTagIndex);
+			}
+		}
+		return outputText;
+	}
+
+	/*string RemoveSubStringFromString(string text, string substring)
+	{
+		int startIndex = text.IndexOf(substring);
+		outputText = text.Substring(beginTagIndex + beginTag.Length, endTagIndex - (beginTagIndex + beginTag.Length));
+	}*/
 }
