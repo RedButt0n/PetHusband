@@ -37,7 +37,7 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void InstantiateChunk (PlayChunk c, Option chosenOption = null)
 	{
-		Debug.Log ("Instantiating Chunck");
+		//Debug.Log ("Instantiating Chunck");
 		activeChunk.gameObject.SetActive (false);
 		var chunkObj = Instantiate (chunk.gameObject) as GameObject;
 		chunkObj.SetActive (true);
@@ -55,7 +55,7 @@ public class PetHusbandPlayer : MonoBehaviour {
 
 	public void SelectOption (Option option)
 	{
-		Debug.Log ("Select Option");
+		//Debug.Log ("Select Option");
 		if (option.LinkStitch != null) {
 			if (chunks.Count > 0) {
 				chunks[chunks.Count - 1].Disable ();

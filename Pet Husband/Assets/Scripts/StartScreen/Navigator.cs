@@ -4,12 +4,13 @@ using System.Collections;
 
 public class Navigator : MonoBehaviour {
 
-	public string _playerName = "";
+	private GlobalVarContainer _globalVars;
 	public Text _input;
 	// Use this for initialization
 	void Start () {
 	
 		if (this.name == "Navigator") DontDestroyOnLoad (this.gameObject);
+		_globalVars = GameObject.Find ("GlobalVarContainer").GetComponent<GlobalVarContainer> ();
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,7 @@ public class Navigator : MonoBehaviour {
 
 	public void GoToSelectionScreen()
 	{
-		_playerName = _input.text;
+		_globalVars._playerName = _input.text;
 		Application.LoadLevel ("Husband_selection_screen");
 	}
 

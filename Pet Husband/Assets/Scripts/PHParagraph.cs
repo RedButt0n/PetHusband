@@ -25,23 +25,26 @@ public class PHParagraph : MonoBehaviour {
 
 	private bool enableNextButton = true;
 
+	private GlobalVarContainer globalVarContainer;
+
 	void Start()
 	{
-		Debug.Log("Start");
+		//Debug.Log("Start");
 		nextButton.gameObject.SetActive(enableNextButton);
 		optionButton.gameObject.SetActive (false);
 	}
 
 	public void SetText (Paragraph paragraph, Option chosenOption, string prevImage)
 	{
-		Debug.Log ("SetText PHParagraph");
+		//Debug.Log ("SetText PHParagraph");
+		globalVarContainer = GameObject.Find("GlobalVarContainer").GetComponent<GlobalVarContainer>();
 		text.gameObject.SetActive (false);
 
 		var obj = Instantiate (text.gameObject) as GameObject;
 		obj.SetActive (true);
 		obj.transform.SetParent (text.transform.parent,false);
 		//obj.GetComponent<TextBlock> ().Set (paragraph);
-		obj.GetComponent<Text>().text = paragraph.Text;
+		obj.GetComponent<Text>().text = ProcessText(paragraph.Text);
 		//text.text = paragraph.Text;
 			
 		/*if (chosenOption != null) {
@@ -64,7 +67,7 @@ public class PHParagraph : MonoBehaviour {
 			} else
 			{
 				image.gameObject.SetActive(false);
-				Debug.Log("No image name provided!");
+				//Debug.Log("No image name provided!");
 			}
 		}
 	}
@@ -162,11 +165,67 @@ public class PHParagraph : MonoBehaviour {
 		var imageName = FileNameWithoutExtension (rawImageName);
 		var sprite = Resources.Load<Sprite> (imageName);
 		if (sprite) {
-			Debug.Log("image name: " + imageName);
+			//Debug.Log("image name: " + imageName);
 			image.sprite = sprite;
 		} else
 		{
-			Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
+			//Debug.Log("Failed to construct image! raw ImageName: " + rawImageName + " imageName: " + imageName);
 		}
 	}
+
+	string ProcessText(string text)
+	{
+		string processText = ReplacePlayerName(text);
+		processText = ExtractTask(processText);
+		return processText;
+	}
+
+	string ReplacePlayerName(string text)
+	{
+		return text.Replace("%naam%",globalVarContainer._playerName);
+	}
+
+	string ExtractTask(string text)
+	{
+		//text += "<taak>Zorg dat hij niet in slaap valt.</taak>";
+		string outputText = text;
+
+		string taskText = ExtractDataBetweenTags(ref outputText, "<taak>", "</taak>", true);
+	
+		if(!string.IsNullOrEmpty(taskText))
+		{
+			var taskBehaviour = GameObject.Find("Task").GetComponent<TaskBehavior>();
+			if(taskBehaviour != null)
+			{
+				taskBehaviour.SetText(taskText);
+				taskBehaviour.ShowFirstTime();
+			}
+		}
+
+		return outputText;
+	}
+
+	string ExtractDataBetweenTags(ref string text, string beginTag, string endTag, bool removeTagsFromText = false)
+	{
+		string outputText = string.Empty;
+		if(text.Contains(beginTag))
+		{
+			int beginTagIndex = text.IndexOf(beginTag);
+			int endTagIndex = text.IndexOf(endTag);
+			
+			outputText = text.Substring(beginTagIndex + beginTag.Length, endTagIndex - (beginTagIndex + beginTag.Length));
+
+			if(removeTagsFromText)
+			{
+				text = text.Remove(beginTagIndex,endTagIndex+endTag.Length - beginTagIndex);
+			}
+		}
+		return outputText;
+	}
+
+	/*string RemoveSubStringFromString(string text, string substring)
+	{
+		int startIndex = text.IndexOf(substring);
+		outputText = text.Substring(beginTagIndex + beginTag.Length, endTagIndex - (beginTagIndex + beginTag.Length));
+	}*/
 }

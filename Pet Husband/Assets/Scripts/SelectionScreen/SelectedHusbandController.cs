@@ -8,6 +8,7 @@ public class SelectedHusbandController : MonoBehaviour {
 	public Image _husbandImage;
 	public Text _husbandName;
 	public Text _husbandDescription;
+	public Text _husbandLongDescription;
 
 	public GameObject[] _husbandlist;				//List of all available husbands
 	private int _selectedNumber = 0;				//Number to iterate through husbandList
@@ -51,6 +52,7 @@ public class SelectedHusbandController : MonoBehaviour {
 		_selectedHusband = _husbandlist [_selectedNumber].GetComponent<HusbandProperties> ();
 		_husbandName.text = _selectedHusband._name;
 		_husbandDescription.text = _selectedHusband._description;
+		_husbandLongDescription.text = _selectedHusband._longDescription;
 		_husbandImage.sprite = _selectedHusband._image;
 	}
 
