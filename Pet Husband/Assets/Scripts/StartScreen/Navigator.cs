@@ -10,7 +10,9 @@ public class Navigator : MonoBehaviour {
 	void Start () {
 	
 		if (this.name == "Navigator") DontDestroyOnLoad (this.gameObject);
-		_globalVars = GameObject.Find ("GlobalVarContainer").GetComponent<GlobalVarContainer> ();
+
+		if(GameObject.Find ("GlobalVarContainer") != null)
+			_globalVars = GameObject.Find ("GlobalVarContainer").GetComponent<GlobalVarContainer> ();
 	}
 	
 	// Update is called once per frame
