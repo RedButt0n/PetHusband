@@ -56,6 +56,7 @@ public class CutSceneScript : MonoBehaviour {
 		++currentFrame;
 		_displayTime = _framelist[currentFrame]._time;
 		_image = _framelist[currentFrame]._image;
+		_framelist [currentFrame].PlaySound ();
 		_timer = 0.0f;
 	}
 		
