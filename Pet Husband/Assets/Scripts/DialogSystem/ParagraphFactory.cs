@@ -61,16 +61,6 @@ public class ParagraphFactory : MonoBehaviour {
         if (paragraphTypeFound)
         {
             newParagraph = InstantiateNewParagraph(paragraphTemplate, chosenOption, prevChunkImage, out currentImageName);
-            //newParagraph = Instantiate(paragraphObj) as GameObject;
-            //newParagraph.SetActive(false);
-            ////newParagraph.transform.SetParent(activeParagraph.transform.parent, false);
-            ////var paragraphComponent = newParagraph.GetComponent<PHParagraph>();
-            //var paragraphComponent = newParagraph.GetComponent(typeof(IPHParagraph)) as IPHParagraph;
-            ////newParagraph.
-            //paragraphComponent.Initialize(parser, chosenOption, prevChunkImage);
-            ////paragraphComponent.SetText(paragraph, chosenOption, prevChunkImage);
-            //currentImageName = paragraphComponent.GetImageName();
-            ////paragraphs.Add(newParagraph);
         }
         else
         {

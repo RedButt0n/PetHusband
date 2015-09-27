@@ -48,8 +48,8 @@ public class PHChunk : MonoBehaviour {
 		++activeParagraphIndex;
 		//Debug.Log("GoToNextparagraph: " + activeParagraphIndex); 
 		//Debug.Log("paragrphas: " + paragraphs.Count);
-		if(activeParagraphIndex < paragraphs.Count)
-		{
+        if (activeParagraphIndex < paragraphs.Count)
+        {
             //activeParagraph.SetActive(false);
             //var paragraphComponent = activeParagraph.GetComponent<PHParagraph>();
             //paragraphComponent.Disable();
@@ -67,7 +67,7 @@ public class PHChunk : MonoBehaviour {
             paragraphComponent = GetScriptComponentOfParagraph(activeParagraph);
             paragraphComponent.Enable();
             activeParagraph.SetActive(true);
-		}
+        }
 	}
 	
 	public void Enable ()

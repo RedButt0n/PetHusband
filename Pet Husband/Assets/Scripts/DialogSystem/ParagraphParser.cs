@@ -39,6 +39,13 @@ public class ParagraphParser : TextParser
     public string ExtractParagraphType()
     {
         return ExtractDataBetweenTags(paragraphToParse.Text, "< Type >", "< /Type >");
+        //return "EndScene";
+    }
+
+    public string ExtractScene()
+    {
+        return ExtractDataBetweenTags(paragraphToParse.Text, "< Scene >", "< /Scene >");
+        //return "CS_end_monday_fight";
     }
 
     public string ExtractMessage()
