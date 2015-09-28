@@ -6,38 +6,70 @@ public class TaskBehavior : MonoBehaviour {
 
 	public string _text;
 	public Sprite _icon;
-	public float  _showTime = 4f;
-
-	private float _counter = 0.0f;
+	
 	private Text _textComponent;
 	private Image _bgImgComponent;
 	private Canvas _canvas;
+	
+	private Color _originalImgColor;
+	private Color _originalTxtColor;
 
+	private Color _transparantImgColor;
+	private Color _transparantTxtColor;
+
+	private enum VisibilityState
+	{
+		Hidden,
+		FadeIn,
+		Visible,
+		FadeOut
+	}
+	
+	private VisibilityState _visibility = VisibilityState.Hidden;
+
+	public float  _showTime = 4f;
+	private float _timer = 0f;
+	
 	private void Start()
 	{
-		_textComponent = this.GetComponentInChildren<Text>();
-		_textComponent.enabled = false;
-		
 		_canvas = this.GetComponent<Canvas>();
 		_canvas.enabled = false;
 
-		
 		_bgImgComponent = this.transform.FindChild ("BgImage").GetComponent<Image> ();
-		_bgImgComponent.enabled = false;
+		_textComponent = this.GetComponentInChildren<Text>();
+
+		_originalImgColor = _bgImgComponent.color;
+		_originalTxtColor = _textComponent.color;
+
+		_transparantImgColor = new Color (_originalImgColor.r, _originalImgColor.g, _originalImgColor.b, 0);
+		_transparantTxtColor = new Color (_textComponent.color.r, _textComponent.color.g, _textComponent.color.b, 0);
 	}
 
 	private void Update()
 	{
-		if(_textComponent.enabled)
+		switch (_visibility)
 		{
-			if (_counter < _showTime) {
-				_counter += Time.deltaTime;
-			}
-			else
-			{
-				_textComponent.enabled = false;
-				_bgImgComponent.enabled = false;
-			}
+			case VisibilityState.FadeIn:
+				FadeIn();
+				break;
+
+			case VisibilityState.Visible:
+				_timer += Time.deltaTime;
+				if(_timer > _showTime)
+				{
+					_visibility = VisibilityState.FadeOut;
+					_timer = 0;
+				}
+				break;
+
+			case VisibilityState.FadeOut:
+				FadeOut();
+				break;
+
+			case VisibilityState.Hidden:
+				_bgImgComponent.color = _transparantImgColor;
+				_textComponent.color = _transparantTxtColor;
+				break;
 		}
 	}
 
@@ -48,21 +80,45 @@ public class TaskBehavior : MonoBehaviour {
 		this._icon = icon;
 	}
 
-	public void ShowFirstTime()
+	public void Show()
 	{
-		ShowText ();
+		_visibility = VisibilityState.FadeIn;
 		_canvas.enabled = true;
-	}
-
-	public void ShowText()
-	{
-		_textComponent.enabled = true;
-		_bgImgComponent.enabled = true;
-		_counter = 0.0f;
 	}
 
 	public void SetText(string text)
 	{
 		_textComponent.text = text;
+	}
+
+	private void FadeOut()
+	{
+		if (_timer < 1)
+		{
+			_timer += Time.deltaTime;
+			_bgImgComponent.color = Color.Lerp (_originalImgColor, _transparantImgColor, _timer * 2f);
+			_textComponent.color = Color.Lerp (_originalTxtColor, _transparantTxtColor, _timer * 2f);
+		}
+
+		else
+		{
+			_visibility = VisibilityState.Hidden;
+			_timer=0;
+		}
+	}
+
+	private void FadeIn()
+	{
+		if (_timer < 1) {
+			_timer += Time.deltaTime;
+			_bgImgComponent.color = Color.Lerp (_transparantImgColor, _originalImgColor, _timer * 2f);
+			_textComponent.color = Color.Lerp (_transparantTxtColor, _originalTxtColor, _timer * 2f);
+		} 
+
+		else
+		{
+			_visibility = VisibilityState.Visible;
+			_timer=0;
+		}
 	}
 }
