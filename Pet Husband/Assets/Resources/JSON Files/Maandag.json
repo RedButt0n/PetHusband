@@ -4,7 +4,7 @@
 		"editorData" : {
 			"authorName" : "Sylvie Flamand & Gerwin Brabants",
 			"textSize" : 1,
-			"playPoint" : "victorDatZalOnze",
+			"playPoint" : "naamJaFijnIkKijk",
 			"libraryVisible" : false
 		},
 		"optionMirroring" : true,
@@ -17,9 +17,7 @@
 			},
 			"pLWatVindJeVanPi" : {
 				"content" : ["*-PL: -*Wat vind je van pizza?", {
-						"divert" : "naamWatVindJeVan2"
-					}, {
-						"flagName" : "pizza +1"
+						"divert" : "victorIkBestelHe"
 					}
 				]
 			},
@@ -133,7 +131,7 @@
 				"content" : ["*--**-Victor: -*Pizza is goed. Ik bestel hem wel./= =/", {
 						"image" : "Victor_vrees.png"
 					}, {
-						"divert" : "victorZiezo"
+						"divert" : "victorZiezoBGIma"
 					}
 				]
 			},
@@ -161,17 +159,17 @@
 					}
 				]
 			},
+			"naamWatDan" : {
+				"content" : ["*-%naam%:-* Wat dan?", {
+						"divert" : "victorIkHebEchtG"
+					}
+				]
+			},
 			"victorIkBestelHe" : {
 				"content" : ["*-Victor:-* Ik bestel hem wel even.", {
 						"image" : "Victor_bel.png"
 					}, {
-						"divert" : "victorZiezo"
-					}
-				]
-			},
-			"naamWatDan" : {
-				"content" : ["*-%naam%:-* Wat dan?", {
-						"divert" : "victorIkHebEchtG"
+						"divert" : "victorZiezoBGIma"
 					}
 				]
 			},
@@ -281,14 +279,6 @@
 					}
 				]
 			},
-			"victorZiezo" : {
-				"content" : ["Victor: Ziezo. ", {
-						"image" : "Victor_lief.png"
-					}, {
-						"divert" : "victorStartJijDe"
-					}
-				]
-			},
 			"naamEuhZeWarenDa" : {
 				"content" : ["*-%naam%-* Euh, ze waren daar toch al?", {
 						"divert" : "victorNeeToch"
@@ -378,10 +368,10 @@
 				]
 			},
 			"victorMijnExcuse" : {
-				"content" : ["*-Victor-* Mijn excuses, professor in de film.", {
+				"content" : ["*-Victor-* Mijn excuses, professor in de film. < TVscene > ", {
 						"image" : "Victor_nee.png"
 					}, {
-						"divert" : "victorOhDatWasHe"
+						"divert" : "TypeTVsceneEndTy"
 					}
 				]
 			},
@@ -418,6 +408,14 @@
 					}
 				]
 			},
+			"victorZiezoBGIma" : {
+				"content" : ["Victor: Ziezo. < BGImage >BG_zoom< /BGImage >", {
+						"image" : "Victor_lief.png"
+					}, {
+						"divert" : "victorStartJijDe"
+					}
+				]
+			},
 			"naamHmmm" : {
 				"content" : ["*-%naam%:-* Hmmm...", {
 						"notIfConditions" : null,
@@ -450,7 +448,7 @@
 			},
 			"pLWatVindJeVanGr" : {
 				"content" : ["*-PL: -*Wat vind je van Grieks?", {
-						"divert" : "victorTzazikiTza1"
+						"divert" : "victorTzazikiTza"
 					}, {
 						"flagName" : "grieks +1"
 					}
@@ -463,7 +461,7 @@
 				]
 			},
 			"victorStartJijDe" : {
-				"content" : ["Victor: Start jij de film schat?", {
+				"content" : ["*-Victor:-* Start jij de film schat? < Type >TVscenePlay< /Type >", {
 						"image" : "BG_zoom.png"
 					}, {
 						"notIfConditions" : null,
@@ -512,12 +510,6 @@
 					}
 				]
 			},
-			"naamWeZullenZien" : {
-				"content" : ["*-%naam%:-* We zullen zien!", {
-						"divert" : "DeurbelVictorAha"
-					}
-				]
-			},
 			"victor1" : {
 				"content" : ["*-Victor: -*...", {
 						"image" : "Victor_slaap.png"
@@ -529,6 +521,12 @@
 						"ifCondition" : "slaap > 1"
 					}, {
 						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"naamWeZullenZien" : {
+				"content" : ["*-%naam%:-* We zullen zien!", {
+						"divert" : "DeurbelVictorAha"
 					}
 				]
 			},
@@ -722,15 +720,15 @@
 					}
 				]
 			},
-			"naamZekerDatJeGe" : {
-				"content" : ["*-%naam%:-* Zeker dat je geen pizza wil?", {
-						"divert" : "victorZekerNiets"
-					}
-				]
-			},
 			"naamGeenWonderJe" : {
 				"content" : ["*-%naam%:-* Geen wonder je dat deze film als kind nooit uitgekeken hebt.", {
 						"divert" : "victorEnTochWilI"
+					}
+				]
+			},
+			"naamZekerDatJeGe" : {
+				"content" : ["*-%naam%:-* Zeker dat je geen pizza wil?", {
+						"divert" : "victorZekerNiets"
 					}
 				]
 			},
@@ -743,10 +741,10 @@
 				]
 			},
 			"victorLekkerOnts" : {
-				"content" : ["*-Victor: -*Lekker ontspannend he!", {
+				"content" : ["*-Victor: -*Lekker ontspannend he! < TVscene >", {
 						"image" : "Victor_lief.png"
 					}, {
-						"divert" : "victorOhDatWasHe"
+						"divert" : "TypeTVsceneEndTy"
 					}
 				]
 			},
@@ -784,15 +782,9 @@
 			},
 			"naamSstSchatIkPr" : {
 				"content" : ["*-%naam%:-* Sst schat, ik probeer te volgen. Hier, neem nog een kussen.", {
-						"divert" : "victorHmmmTVscen"
+						"divert" : "victorHmmm"
 					}, {
 						"flagName" : "slaap +1"
-					}
-				]
-			},
-			"naamZegJeMagBest" : {
-				"content" : ["*-%naam%: -*Zeg, je mag best toegeven dat je andere vrouwen aantrekkelijk vindt, hoor. Zoals ik mag toegeven dat onze salontafel op niks trekt!", {
-						"divert" : "victorDieSalonta"
 					}
 				]
 			},
@@ -806,11 +798,27 @@
 					}
 				]
 			},
+			"naamZegJeMagBest" : {
+				"content" : ["*-%naam%: -*Zeg, je mag best toegeven dat je andere vrouwen aantrekkelijk vindt, hoor. Zoals ik mag toegeven dat onze salontafel op niks trekt!", {
+						"divert" : "victorDieSalonta"
+					}
+				]
+			},
 			"victorSushiSmush" : {
 				"content" : ["*-Victor -*Sushi smushi...", {
 						"image" : "Victor_nee.png"
 					}, {
 						"divert" : "naamWeGaanErToch"
+					}
+				]
+			},
+			"victorJezusDatWa" : {
+				"content" : ["*-Victor: -*Jezus, dat was schrikken! Sorry dat ik in slaap viel, schat! We zullen ons een nieuwe moeten aan te schaffen.", {
+						"image" : "Victor_schok.png"
+					}, {
+						"divert" : "victorWeMoetenMo"
+					}, {
+						"ifCondition" : "slaap einde"
 					}
 				]
 			},
@@ -835,16 +843,6 @@
 					}
 				]
 			},
-			"victorJezusDatWa" : {
-				"content" : ["*-Victor: -*Jezus, dat was schrikken! Sorry dat ik in slaap viel, schat! We zullen ons een nieuwe moeten aan te schaffen.", {
-						"image" : "Victor_schok.png"
-					}, {
-						"divert" : "victorWeMoetenMo"
-					}, {
-						"ifCondition" : "slaap einde"
-					}
-				]
-			},
 			"victorZeHeeftMoo" : {
 				"content" : ["*-Victor: -*Ze heeft mooie ogen. Verder niet echt mijn type eigenlijk.", {
 						"image" : "Victor_vrees.png"
@@ -855,12 +853,14 @@
 			},
 			"pLWatVindJeVanPi1" : {
 				"content" : ["*-PL: -*Wat vind je van pizza?", {
-						"divert" : "victorIkBestelHe"
+						"divert" : "naamWatVindJeVan2"
+					}, {
+						"flagName" : "pizza +1"
 					}
 				]
 			},
 			"naamIkHebWelZinI" : {
-				"content" : ["*-%naam%: -*Ik heb wel zin in... < Type >TVscene< /Type >", {
+				"content" : ["%naam%: Ik heb wel zin in... < Type >TVsceneMenu< /Type >", {
 						"notIfConditions" : null,
 						"ifConditions" : null,
 						"linkPath" : "naamIkHebWelZinI1",
@@ -878,23 +878,27 @@
 					}
 				]
 			},
+			"naamOhJeHebtNiet" : {
+				"content" : ["*-%naam%: -*Oh, je hebt niets gemist hoor!", {
+						"divert" : "victorZegMaarWaa"
+					}
+				]
+			},
+			"victorTzazikiTza" : {
+				"content" : ["*-Victor: -*Tzaziki? Tza zie ik niet zitti! /=(afkeurend)=/", {
+						"image" : "http://i57.tinypic.com/zk39qo.jpg"
+					}, {
+						"divert" : "victorNeeDatViel"
+					}, {
+						"ifCondition" : "grieks = 1"
+					}
+				]
+			},
 			"victorDeHerinner" : {
 				"content" : ["*-Victor: -*De herinner ik me nog uit mijn kindertijd. Ik viel toen altijd in slaap\u2026 Misschien dat ik nu eindelijk eens het einde te zien krijg! /=(vriendelijk)=/", {
 						"image" : "Victor_lief.png"
 					}, {
 						"divert" : "naamZullenWeMete"
-					}
-				]
-			},
-			"victorTzazikiTza" : {
-				"content" : ["Victor Tzaziki? Tza zie ik niet zitti!", {
-						"divert" : "naamSchatIkHebVa"
-					}
-				]
-			},
-			"naamOhJeHebtNiet" : {
-				"content" : ["*-%naam%: -*Oh, je hebt niets gemist hoor!", {
-						"divert" : "victorZegMaarWaa"
 					}
 				]
 			},
@@ -1061,26 +1065,6 @@
 					}
 				]
 			},
-			"victorGohNee" : {
-				"content" : ["*-Victor -*Goh, nee.", {
-						"divert" : "naamSchatIkHebVa"
-					}
-				]
-			},
-			"naamGrieksDan1" : {
-				"content" : ["*-%naam%: -*Grieks dan?", {
-						"divert" : "victorTzatzikiTz"
-					}
-				]
-			},
-			"naamNiksBelangri" : {
-				"content" : ["*-%naam%-* Niks belangrijk, je hebt niets gemist.", {
-						"divert" : "victorWaaromZijn"
-					}, {
-						"notIfCondition" : "pauze"
-					}
-				]
-			},
 			"victorGoedIdeeMa" : {
 				"content" : ["*-Victor: -*Goed idee, maar ik at al beestjes deze middag.", {
 						"image" : "Victor_nee.png"
@@ -1089,13 +1073,15 @@
 					}
 				]
 			},
+			"victorGohNee" : {
+				"content" : ["*-Victor -*Goh, nee.", {
+						"divert" : "naamSchatIkHebVa"
+					}
+				]
+			},
 			"victorTzazikiTza1" : {
-				"content" : ["*-Victor: -*Tzaziki? Tza zie ik niet zitti! /=(afkeurend)=/", {
-						"image" : "http://i57.tinypic.com/zk39qo.jpg"
-					}, {
-						"divert" : "victorNeeDatViel"
-					}, {
-						"ifCondition" : "grieks = 1"
+				"content" : ["Victor Tzaziki? Tza zie ik niet zitti!", {
+						"divert" : "naamSchatIkHebVa"
 					}
 				]
 			},
@@ -1115,17 +1101,17 @@
 					}
 				]
 			},
-			"victorIndischSch" : {
-				"content" : ["*-Victor -*Indisch schmindisch. /=(afkeurend)=/", {
-						"image" : "Victor_nee.png"
+			"naamNiksBelangri" : {
+				"content" : ["*-%naam%-* Niks belangrijk, je hebt niets gemist.", {
+						"divert" : "victorWaaromZijn"
 					}, {
-						"ifCondition" : "indisch = 1"
+						"notIfCondition" : "pauze"
 					}
 				]
 			},
-			"naamWauwWatEenSu" : {
-				"content" : ["*-%naam%: -*Wauw, wat een superflik! Ondertussen al dertig keer geraakt en hij staat nog steeds recht!", {
-						"divert" : "victorTuurlijkSc"
+			"naamGrieksDan1" : {
+				"content" : ["*-%naam%: -*Grieks dan?", {
+						"divert" : "victorTzatzikiTz"
 					}
 				]
 			},
@@ -1140,6 +1126,20 @@
 						"notIfCondition" : "slaap einde"
 					}, {
 						"notIfCondition" : "ruzie einde"
+					}
+				]
+			},
+			"naamWauwWatEenSu" : {
+				"content" : ["*-%naam%: -*Wauw, wat een superflik! Ondertussen al dertig keer geraakt en hij staat nog steeds recht!", {
+						"divert" : "victorTuurlijkSc"
+					}
+				]
+			},
+			"victorIndischSch" : {
+				"content" : ["*-Victor -*Indisch schmindisch. /=(afkeurend)=/", {
+						"image" : "Victor_nee.png"
+					}, {
+						"ifCondition" : "indisch = 1"
 					}
 				]
 			},
@@ -1196,6 +1196,14 @@
 					}
 				]
 			},
+			"victorMmmmmmmisc" : {
+				"content" : ["*-Victor: -*Mmmmmmmischien?", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naam"
+					}
+				]
+			},
 			"DeurbelVictorAha" : {
 				"content" : ["< deurbel >*- Victor: -*Aha!", {
 						"image" : "Victor_lief.png"
@@ -1217,14 +1225,6 @@
 			"naamKomaanIkWeet" : {
 				"content" : ["*-%naam%:-* Komaan, ik weet dat je dol bent op pizza!", {
 						"divert" : "victorJeHebtGeli"
-					}
-				]
-			},
-			"victorMmmmmmmisc" : {
-				"content" : ["*-Victor: -*Mmmmmmmischien?", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naam"
 					}
 				]
 			},
@@ -1273,9 +1273,23 @@
 					}
 				]
 			},
-			"naamVeganistisch" : {
-				"content" : ["*-%naam%: -*Veganistisch?*--*", {
-						"divert" : "victorBenJeNuHel"
+			"victorIkWasTrouw" : {
+				"content" : ["*-Victor: -*Ik was trouwens aan het denken aan de salontafel. Ik ben er wel aan gehecht, maar je hebt gelijk: ze is wel een beetje lelijk.", {
+						"image" : "Victor_lief.png"
+					}, {
+						"divert" : "victorAangezienW"
+					}, {
+						"ifCondition" : "succes einde"
+					}
+				]
+			},
+			"victorOeiSorry" : {
+				"content" : ["*-Victor:-* Oei, sorry...", {
+						"image" : "Victor_schok.png"
+					}, {
+						"divert" : "victorHetSpijtMe"
+					}, {
+						"ifCondition" : "ruzie einde"
 					}
 				]
 			},
@@ -1284,14 +1298,6 @@
 						"image" : "Victor_lol.png"
 					}, {
 						"divert" : "naamGeenWonderJe"
-					}
-				]
-			},
-			"victorJeWtTochDa" : {
-				"content" : ["*-Victor: -*Je w\u00e9\u00e9t toch dat ik allergisch ben aan rijst?", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamWaarBenJijNi"
 					}
 				]
 			},
@@ -1325,23 +1331,17 @@
 					}
 				]
 			},
-			"victorOeiSorry" : {
-				"content" : ["*-Victor:-* Oei, sorry...", {
-						"image" : "Victor_schok.png"
+			"victorJeWtTochDa" : {
+				"content" : ["*-Victor: -*Je w\u00e9\u00e9t toch dat ik allergisch ben aan rijst?", {
+						"image" : "Victor_nee.png"
 					}, {
-						"divert" : "victorHetSpijtMe"
-					}, {
-						"ifCondition" : "ruzie einde"
+						"divert" : "naamWaarBenJijNi"
 					}
 				]
 			},
-			"victorIkWasTrouw" : {
-				"content" : ["*-Victor: -*Ik was trouwens aan het denken aan de salontafel. Ik ben er wel aan gehecht, maar je hebt gelijk: ze is wel een beetje lelijk.", {
-						"image" : "Victor_lief.png"
-					}, {
-						"divert" : "victorAangezienW"
-					}, {
-						"ifCondition" : "succes einde"
+			"naamVeganistisch" : {
+				"content" : ["*-%naam%: -*Veganistisch?*--*", {
+						"divert" : "victorBenJeNuHel"
 					}
 				]
 			},
@@ -1350,14 +1350,6 @@
 						"image" : "Victor_nee.png"
 					}, {
 						"divert" : "naamEuh"
-					}
-				]
-			},
-			"victorAlweerPizz" : {
-				"content" : ["*-Victor: -*Alweer pizza?", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamWeGaanErToch"
 					}
 				]
 			},
@@ -1377,6 +1369,30 @@
 					}
 				]
 			},
+			"victorAlweerPizz" : {
+				"content" : ["*-Victor: -*Alweer pizza?", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naamWeGaanErToch"
+					}
+				]
+			},
+			"victorEnOokGeenC" : {
+				"content" : ["*-Victor -*En ook geen Chinees.", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naamSchatIkHebVa"
+					}
+				]
+			},
+			"victorNee" : {
+				"content" : ["*-Victor: -*Nee...", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naamEuh"
+					}
+				]
+			},
 			"victorNeenDatIsH" : {
 				"content" : ["*-Victor: -*Neen, dat is het niet!", {
 						"image" : "Victor_nee.png"
@@ -1393,27 +1409,11 @@
 					}
 				]
 			},
-			"victorNee" : {
-				"content" : ["*-Victor: -*Nee...", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamEuh"
-					}
-				]
-			},
 			"victorWelDieVanB" : {
 				"content" : ["*-Victor: -*Wel die van bij Pavarotti's toch? Die van bij Bocelli's vind ik maar niets.", {
 						"image" : "Victor_nee.png"
 					}, {
 						"divert" : "naamIkGaDaarNiet"
-					}
-				]
-			},
-			"victorEnOokGeenC" : {
-				"content" : ["*-Victor -*En ook geen Chinees.", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamSchatIkHebVa"
 					}
 				]
 			},
@@ -1433,9 +1433,9 @@
 					}
 				]
 			},
-			"naamLekker" : {
-				"content" : ["*-%naam%:-* Lekker!", {
-						"divert" : "victorBedanktOmE"
+			"naamJaFijnIkKijk" : {
+				"content" : ["*-%naam%: -*Ja fijn! Ik kijk er al naar uit! < successcene >", {
+						"ifCondition" : "succes einde"
 					}
 				]
 			},
@@ -1447,17 +1447,9 @@
 					}
 				]
 			},
-			"victorEnTochWilI" : {
-				"content" : ["*-Victor:-* En toch wil ik het einde zien!", {
-						"image" : "Victor_dol.png"
-					}, {
-						"divert" : "DeurbelVictorAha"
-					}
-				]
-			},
-			"naamJaFijnIkKijk" : {
-				"content" : ["*-%naam%: -*Ja fijn! Ik kijk er al naar uit! < successcene >", {
-						"ifCondition" : "succes einde"
+			"TypeTVsceneEndTy" : {
+				"content" : ["< Type >TVsceneEnd< /Type >", {
+						"divert" : "victorOhDatWasHe"
 					}
 				]
 			},
@@ -1468,6 +1460,28 @@
 						"divert" : "naamOhJeHebtNiet"
 					}, {
 						"flagName" : "ruzie +1"
+					}
+				]
+			},
+			"naamLekker" : {
+				"content" : ["*-%naam%:-* Lekker!", {
+						"divert" : "victorBedanktOmE"
+					}
+				]
+			},
+			"victorEnTochWilI" : {
+				"content" : ["*-Victor:-* En toch wil ik het einde zien!", {
+						"image" : "Victor_dol.png"
+					}, {
+						"divert" : "DeurbelVictorAha"
+					}
+				]
+			},
+			"victorHmmm" : {
+				"content" : ["Victor: Hmmm... ", {
+						"image" : "Victor_moe.png"
+					}, {
+						"divert" : "TypeTVsceneEndTy"
 					}
 				]
 			},
@@ -1519,36 +1533,6 @@
 					}
 				]
 			},
-			"victorHmmmTVscen" : {
-				"content" : ["*-Victor:-* Hmmm...", {
-						"image" : "Victor_moe.png"
-					}, {
-						"divert" : "victorOhDatWasHe"
-					}
-				]
-			},
-			"victorZekerNiets" : {
-				"content" : ["*-Victor: -*Zeker? Niets is zeker!", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamDatIsZo"
-					}
-				]
-			},
-			"pLWatVindJeVanSu" : {
-				"content" : ["*-PL: -*Wat vind je van sushi?", {
-						"divert" : "naamWatVindJeVan2"
-					}, {
-						"flagName" : "sushi +1"
-					}
-				]
-			},
-			"naamChinees1" : {
-				"content" : ["*-%naam%: -*Chinees?", {
-						"divert" : "victorChiJasChiN"
-					}
-				]
-			},
 			"victorSorryDatIk" : {
 				"content" : ["*-Victor -*Sorry dat ik het vroeg\u2026 Heb jij \u2018m al gezien dan?", {
 						"image" : "Victor_vrees.png"
@@ -1563,6 +1547,34 @@
 					}
 				]
 			},
+			"naamChinees1" : {
+				"content" : ["*-%naam%: -*Chinees?", {
+						"divert" : "victorChiJasChiN"
+					}
+				]
+			},
+			"pLWatVindJeVanSu" : {
+				"content" : ["*-PL: -*Wat vind je van sushi?", {
+						"divert" : "naamWatVindJeVan2"
+					}, {
+						"flagName" : "sushi +1"
+					}
+				]
+			},
+			"victorZekerNiets" : {
+				"content" : ["*-Victor: -*Zeker? Niets is zeker!", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naamDatIsZo"
+					}
+				]
+			},
+			"naamZieJeDatOokJ" : {
+				"content" : ["*-%naam%:-* Zie je dat ook? Je ziet zo dat er een hand in de reet van die neppe hond zit.", {
+						"divert" : "victorErZitMeerD"
+					}
+				]
+			},
 			"naamOhIkHerkenAc" : {
 				"content" : ["*-%naam%: -*Oh, ik herken {actie:haar}{drama:haar}{komedie:die stem}! Is dat niet die bekende actrice?", {
 						"divert" : "victorJaIkWeetWi"
@@ -1574,12 +1586,6 @@
 						"image" : "Victor_dol.png"
 					}, {
 						"divert" : "victorIkHouVanPi"
-					}
-				]
-			},
-			"naamZieJeDatOokJ" : {
-				"content" : ["*-%naam%:-* Zie je dat ook? Je ziet zo dat er een hand in de reet van die neppe hond zit.", {
-						"divert" : "victorErZitMeerD"
 					}
 				]
 			},
@@ -1643,6 +1649,18 @@
 					}
 				]
 			},
+			"naamKiesJijDan" : {
+				"content" : ["*-%naam% -*Kies jij dan...", {
+						"divert" : "victorOmHetEvenW"
+					}
+				]
+			},
+			"naamSushi1" : {
+				"content" : ["*-%naam%: -*Sushi?", {
+						"divert" : "victorWilJeMijVe"
+					}
+				]
+			},
 			"naamEuh" : {
 				"content" : ["*-%naam%: -*Euh...", {
 						"notIfConditions" : null,
@@ -1662,29 +1680,9 @@
 					}
 				]
 			},
-			"naamKiesJijDan" : {
-				"content" : ["*-%naam% -*Kies jij dan...", {
-						"divert" : "victorOmHetEvenW"
-					}
-				]
-			},
-			"naamSushi1" : {
-				"content" : ["*-%naam%: -*Sushi?", {
-						"divert" : "victorWilJeMijVe"
-					}
-				]
-			},
 			"naamIndisch" : {
 				"content" : ["*-%naam%: -*Indisch?", {
 						"divert" : "victorNee"
-					}
-				]
-			},
-			"pLKiesJijMaar" : {
-				"content" : ["*-PL:-* Kies jij maar.", {
-						"divert" : "victorMijMaaktHe"
-					}, {
-						"flagName" : "onbeslist +1"
 					}
 				]
 			},
@@ -1702,6 +1700,14 @@
 					}
 				]
 			},
+			"pLKiesJijMaar" : {
+				"content" : ["*-PL:-* Kies jij maar.", {
+						"divert" : "victorMijMaaktHe"
+					}, {
+						"flagName" : "onbeslist +1"
+					}
+				]
+			},
 			"naamZullenWeGeze" : {
 				"content" : ["*-%naam%: -*Zullen we gezellig een film kijken thuis? Als je dat volhoudt tenminste...", {
 						"divert" : "naamJeBentNietVo"
@@ -1713,6 +1719,14 @@
 						"image" : "http://i57.tinypic.com/zk39qo.jpg"
 					}, {
 						"divert" : "naamOhLekkerDank"
+					}
+				]
+			},
+			"victorHetSpijtMe" : {
+				"content" : ["*-Victor:-* Het spijt me dat ik uitvloog en dat ik de lamp heb gebroken. Laten we morgen een nieuwe halen.", {
+						"divert" : "victorWeMoetenTo"
+					}, {
+						"ifCondition" : "ruzie einde"
 					}
 				]
 			},
@@ -1732,17 +1746,9 @@
 					}
 				]
 			},
-			"victorHetSpijtMe" : {
-				"content" : ["*-Victor:-* Het spijt me dat ik uitvloog en dat ik de lamp heb gebroken. Laten we morgen een nieuwe halen.", {
-						"divert" : "victorWeMoetenTo"
-					}, {
-						"ifCondition" : "ruzie einde"
-					}
-				]
-			},
-			"naamZitErEenDooi" : {
-				"content" : ["*-%naam%:-* Zit er een dooie tweelingbroer in je hoofd?", {
-						"divert" : "victorWat"
+			"naamNeeMaarZoMoe" : {
+				"content" : ["*-%naam% -*Nee, maar zo moeilijk is het niet hoor. dat is al van in het begin duidelijk.", {
+						"divert" : "victorMijnExcuse"
 					}
 				]
 			},
@@ -1754,20 +1760,6 @@
 					}
 				]
 			},
-			"victorDaarWordIk" : {
-				"content" : ["*-Victor:-* Daar word ik winderig van! ", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamDatIsZo"
-					}
-				]
-			},
-			"naamNeeMaarZoMoe" : {
-				"content" : ["*-%naam% -*Nee, maar zo moeilijk is het niet hoor. dat is al van in het begin duidelijk.", {
-						"divert" : "victorMijnExcuse"
-					}
-				]
-			},
 			"victorTuurlijkSc" : {
 				"content" : ["*-Victor:-* Tuurlijk, schat. Dat is wel Broes Wiels h\u00e8, een keiharde flik die lak heeft aan de wet, de regels, en aan pijn.", {
 						"image" : "Victor_dol.png"
@@ -1776,11 +1768,17 @@
 					}
 				]
 			},
-			"victorYesKeihard" : {
-				"content" : ["*-Victor: -*Yes! Keiharde actie!", {
-						"image" : "Victor_dol.png"
+			"naamZitErEenDooi" : {
+				"content" : ["*-%naam%:-* Zit er een dooie tweelingbroer in je hoofd?", {
+						"divert" : "victorWat"
+					}
+				]
+			},
+			"victorDaarWordIk" : {
+				"content" : ["*-Victor:-* Daar word ik winderig van! ", {
+						"image" : "Victor_nee.png"
 					}, {
-						"divert" : "naamZullenWeMete"
+						"divert" : "naamDatIsZo"
 					}
 				]
 			},
@@ -1792,16 +1790,8 @@
 					}
 				]
 			},
-			"victorDieSalonta" : {
-				"content" : ["*-Victor: -*Die salontafel heeft emotionele waarde! En natuurlijk zijn actrices aantrekkelijk. Maar jij bent ook heel aantrekkelijk. Het is onfair om actrices te vergelijken met gewone vrouwen./= (afkeurend) =/", {
-						"image" : "Victor_nee.png"
-					}, {
-						"divert" : "naamGewoon"
-					}
-				]
-			},
 			"victorIkHoopDatI" : {
-				"content" : ["*-Victor:-* Ik hoop dat ik niets interessants mis!", {
+				"content" : ["Victor: Ik hoop dat ik niets interessants mis! < Type >TVscenePause< /Type >", {
 						"image" : "Victor_lief.png"
 					}, {
 						"notIfConditions" : null,
@@ -1816,11 +1806,11 @@
 					}
 				]
 			},
-			"victorChiJasChiN" : {
-				"content" : ["*-Victor: -*Chi ja's? Chi nee's!", {
+			"victorDieSalonta" : {
+				"content" : ["*-Victor: -*Die salontafel heeft emotionele waarde! En natuurlijk zijn actrices aantrekkelijk. Maar jij bent ook heel aantrekkelijk. Het is onfair om actrices te vergelijken met gewone vrouwen./= (afkeurend) =/", {
 						"image" : "Victor_nee.png"
 					}, {
-						"divert" : "naam"
+						"divert" : "naamGewoon"
 					}
 				]
 			},
@@ -1830,9 +1820,19 @@
 					}
 				]
 			},
-			"naamEnorm" : {
-				"content" : ["*-%naam%-* Enorm. ", {
-						"divert" : "victorIkBenOokOn"
+			"victorChiJasChiN" : {
+				"content" : ["*-Victor: -*Chi ja's? Chi nee's!", {
+						"image" : "Victor_nee.png"
+					}, {
+						"divert" : "naam"
+					}
+				]
+			},
+			"victorYesKeihard" : {
+				"content" : ["*-Victor: -*Yes! Keiharde actie!", {
+						"image" : "Victor_dol.png"
+					}, {
+						"divert" : "naamZullenWeMete"
 					}
 				]
 			},
@@ -1844,23 +1844,15 @@
 					}
 				]
 			},
-			"victorJaIkWeetWi" : {
-				"content" : ["*-Victor: -*Ja, ik weet wie je bedoelt! Die roodharige!", {
-						"image" : "Victor_dol.png"
-					}, {
-						"divert" : "naamVindJeHaarKn"
-					}
-				]
-			},
 			"naamNeenNatuurli" : {
 				"content" : ["*-%naam%-* Neen natuurlijk niet. ", {
 						"divert" : "victorSchatJijBe"
 					}
 				]
 			},
-			"naamIkGaDaarNiet" : {
-				"content" : ["*-%naam%: -*Ik ga daar niet moeilijk over doen!", {
-						"divert" : "victorIkBestelHe"
+			"naamEnorm" : {
+				"content" : ["*-%naam%-* Enorm. ", {
+						"divert" : "victorIkBenOokOn"
 					}
 				]
 			},
@@ -1870,9 +1862,23 @@
 					}
 				]
 			},
+			"victorJaIkWeetWi" : {
+				"content" : ["*-Victor: -*Ja, ik weet wie je bedoelt! Die roodharige!", {
+						"image" : "Victor_dol.png"
+					}, {
+						"divert" : "naamVindJeHaarKn"
+					}
+				]
+			},
+			"naamIkGaDaarNiet" : {
+				"content" : ["*-%naam%: -*Ik ga daar niet moeilijk over doen!", {
+						"divert" : "victorIkBestelHe"
+					}
+				]
+			},
 			"naamGrieksDan" : {
 				"content" : ["%naam% Grieks dan?", {
-						"divert" : "victorTzazikiTza"
+						"divert" : "victorTzazikiTza1"
 					}
 				]
 			}
@@ -1880,7 +1886,7 @@
 		"initial" : "victorSchatIkBen"
 	},
 	"title" : "Pet Husband - MAANDAG",
-	"updated_at" : "2015-09-27T03:54:31Z",
+	"updated_at" : "2015-09-28T15:58:36Z",
 	"created_at" : "2015-09-19T04:47:07Z",
 	"url_key" : "gwzq"
 }
