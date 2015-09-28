@@ -14,7 +14,8 @@ public class PHParagraph : APHParagraph
 	public Button nextButton;
 	List<Button> options = new List<Button> ();
 
-	public Image image;
+	public Image characterImage;
+    public Image backgroundImage;
 
 	private bool enableNextButton = true;
 
@@ -41,8 +42,19 @@ public class PHParagraph : APHParagraph
         string taskText = parser.ExtractTask();
         SetAndDisplayTaskText(taskText);
 
-        //Retrieve image Path
-        SetAndDisplayImage(ProcessImageFilename(parser,prevImage));
+        //Retrieve image Path of Character
+        SetAndDisplayCharacterImage(ProcessImageFilename(parser,prevImage));
+
+        ChangeBackground(parser);
+    }
+
+    private void ChangeBackground(ParagraphParser parser)
+    {
+        string backgroundImage = parser.ExtractBackgroundImage();
+        if (!string.IsNullOrEmpty(backgroundImage))
+        {
+            SetAndDisplayBackgroundImage(backgroundImage);
+        }
     }
 
     public override void SetOptions(List<BlockContent<Option>> optionList, PetHusbandPlayer player)
@@ -112,15 +124,15 @@ public class PHParagraph : APHParagraph
     public override string GetImageName()
     {
         string imageName = "";
-        if (image.sprite != null)
+        if (characterImage.sprite != null)
         {
-            imageName = image.sprite.name;
+            imageName = characterImage.sprite.name;
         }
 
         return imageName;
     }
 
-    private void SetAndDisplayImage(string imageFileName)
+    private void SetAndDisplayImage(Image image, string imageFileName)
     {
         if (!string.IsNullOrEmpty(imageFileName))
         {
@@ -139,5 +151,15 @@ public class PHParagraph : APHParagraph
             Debug.Log("An empty filename has been provided as image file path, no image could be shown");
             image.gameObject.SetActive(false);
         }
+    }
+
+    private void SetAndDisplayCharacterImage(string imageFileName)
+    {
+        SetAndDisplayImage(characterImage, imageFileName);
+    }
+
+    private void SetAndDisplayBackgroundImage(string imageFileName)
+    {
+        SetAndDisplayImage(backgroundImage, imageFileName);
     }
 }

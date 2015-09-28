@@ -33,12 +33,24 @@ public class ParagraphParser : TextParser
 
     public string ExtractTask()
     {
-        return ExtractDataBetweenTags(paragraphToParse.Text, "< taak >", "< /taak >");
+        return ExtractDataBetweenTags(paragraphToParse.Text, "taak");
     }
 
     public string ExtractParagraphType()
     {
-        return ExtractDataBetweenTags(paragraphToParse.Text, "< Type >", "< /Type >");
+        return ExtractDataBetweenTags(paragraphToParse.Text, "Type");
+        //return "EndScene";
+    }
+
+    public string ExtractScene()
+    {
+        return ExtractDataBetweenTags(paragraphToParse.Text, "Scene");
+        //return "CS_end_monday_fight";
+    }
+
+    public string ExtractBackgroundImage()
+    {
+        return ExtractDataBetweenTags(paragraphToParse.Text, "BGImage");
     }
 
     public string ExtractMessage()

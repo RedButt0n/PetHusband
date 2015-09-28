@@ -36,6 +36,14 @@ public class TextParser
         return outputText;
     }
 
+    public string ExtractDataBetweenTags(string text, string tagWithoutSyntax)
+    {
+        string beginTag = "< " + tagWithoutSyntax + " >";
+        string endTag   = "< /" + tagWithoutSyntax + " >";
+
+        return ExtractDataBetweenTags(text, beginTag, endTag);
+    }
+
     public string ExtractDataBetweenTags(string text, string beginTag, string endTag)
     {
         string outputText = string.Empty;
