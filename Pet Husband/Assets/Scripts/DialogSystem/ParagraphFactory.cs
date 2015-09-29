@@ -33,7 +33,7 @@ public class ParagraphFactory : MonoBehaviour {
         //Build up paragraph dictionary for easy lookup later
         foreach (var paragraphType in paragraphTypes)
         {
-            paragraphTypesDict.Add(paragraphType.typeName, paragraphType.paragraph);          
+            paragraphTypesDict.Add(paragraphType.typeName.ToUpper(), paragraphType.paragraph);          
         }
 	}
 	
@@ -51,7 +51,7 @@ public class ParagraphFactory : MonoBehaviour {
         GameObject newParagraph = null;
         currentImageName = string.Empty;
 
-        bool paragraphTypeFound = paragraphTypesDict.TryGetValue(paragraphType, out paragraphTemplate);
+        bool paragraphTypeFound = paragraphTypesDict.TryGetValue(paragraphType.ToUpper(), out paragraphTemplate);
         if (!paragraphTypeFound)
         {
             Debug.LogWarning("The requested paragraphType could not be found! type: " + paragraphType + ". Loading default paragraph!");
