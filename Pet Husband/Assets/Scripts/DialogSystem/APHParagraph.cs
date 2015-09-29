@@ -72,4 +72,19 @@ public abstract class APHParagraph :MonoBehaviour, IPHParagraph
         } 
     }
 
+	protected void SetAndDisplayMessageText(ParagraphParser parser, Text message)
+	{
+		
+		message.text = parser.ExtractMessage();
+
+		//Set color
+		if (parser.ExtractSpeaker () == Speaker.Player) {
+			message.color = GameObject.Find ("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer> ()._playerColor;
+		}
+		else
+		{
+			message.color = GameObject.Find ("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer> ()._husbandColor;
+		}
+	}
+
 }

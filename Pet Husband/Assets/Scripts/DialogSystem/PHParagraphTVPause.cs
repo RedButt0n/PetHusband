@@ -44,7 +44,7 @@ public class PHParagraphTVPause : APHParagraph
         var obj = Instantiate(text.gameObject) as GameObject;
         obj.SetActive(true);
         obj.transform.SetParent(text.transform.parent, false);
-        obj.GetComponent<Text>().text = parser.ExtractMessage();
+		SetAndDisplayMessageText(parser, obj.GetComponent<Text>());
 
         //Retrieve task text
         string taskText = parser.ExtractTask();

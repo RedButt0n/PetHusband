@@ -6,6 +6,9 @@ public class GlobalStoryVarContainer : MonoBehaviour
 
     private string _PreviousBackgroundImage = string.Empty;
     private string _selectedMovie = string.Empty;
+	
+	public Color _playerColor;
+	public Color _husbandColor;
 
     public string PreviousBackgroundImage
     {

@@ -87,7 +87,9 @@ public class ParagraphParser : TextParser
 
 	public Speaker ExtractSpeaker()
 	{
-		if (paragraphToParse.Text.Substring (0, paragraphToParse.Text.IndexOf (" ")) == "%naam%") 
+		string name = paragraphToParse.Text.Substring (0, paragraphToParse.Text.IndexOf (" "));
+
+		if (name.Contains("%naam%")) 
 		{
 			return Speaker.Player;
 		}
