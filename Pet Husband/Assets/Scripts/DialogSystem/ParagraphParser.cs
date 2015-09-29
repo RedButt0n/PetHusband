@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,12 @@ using System.Text.RegularExpressions;
 using Inklewriter;
 using Inklewriter.Player;
 using Inklewriter.Unity;
+
+public enum Speaker
+{
+	Player,
+	Husband,
+}
 
 public class ParagraphParser : TextParser
 {
@@ -78,5 +84,17 @@ public class ParagraphParser : TextParser
     {
         return FileNameWithoutExtension(paragraphToParse.Image);
     }
+
+	public Speaker ExtractSpeaker()
+	{
+		if (paragraphToParse.Text.Substring (0, paragraphToParse.Text.IndexOf (" ")) == "%naam%") 
+		{
+			return Speaker.Player;
+		}
+		else
+		{
+			return Speaker.Husband;
+		}
+	}
    
 }
