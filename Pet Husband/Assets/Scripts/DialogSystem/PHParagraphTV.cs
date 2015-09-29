@@ -32,12 +32,15 @@ public class PHParagraphTV : APHParagraph
 	public Button playButton;
 
     private TextParser _TextParser = new TextParser();
+
+    private GlobalStoryVarContainer m_GlobalStoryVarContainer;
 	
 	void Start()
 	{
 		//Debug.Log("Start");
 		nextButton.gameObject.SetActive(enableNextButton);
 		//optionButton.gameObject.SetActive (false);
+        m_GlobalStoryVarContainer = GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>();
 	}
 
     public override void Initialize(ParagraphParser parser, Option chosenOption, string prevImage)
@@ -81,6 +84,7 @@ public class PHParagraphTV : APHParagraph
             optionData.optionAction = delegate
             {
                 player.SelectOption(optionContent);
+                m_GlobalStoryVarContainer.SelectedMovie = imagePath;
             };
             
 			options.AddLast(optionData);
@@ -177,15 +181,4 @@ public class PHParagraphTV : APHParagraph
         string imagePath = _TextParser.ExtractDataBetweenTags(ref text, "< Image >", "< /Image >");
         return _TextParser.FileNameWithoutExtension(imagePath);
     }
-	
-	Sprite ConstructSprite (string imageFileName)
-	{
-        Sprite sprite = null;
-        if (!string.IsNullOrEmpty(imageFileName))
-        {
-            sprite = Resources.Load<Sprite>(imageFileName);
-        }
-
-		return sprite;
-	}
 }

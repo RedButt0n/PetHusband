@@ -132,27 +132,6 @@ public class PHParagraph : APHParagraph
         return imageName;
     }
 
-    private void SetAndDisplayImage(Image image, string imageFileName)
-    {
-        if (!string.IsNullOrEmpty(imageFileName))
-        {
-            var sprite = Resources.Load<Sprite>(imageFileName);
-            if (sprite != null)
-            {
-                image.sprite = sprite;
-            } else
-            {
-                Debug.Log("Failed to construct image! imageFileName: " + imageFileName);
-            }
-        }
-        else
-        {
-            //disable the image
-            Debug.Log("An empty filename has been provided as image file path, no image could be shown");
-            image.gameObject.SetActive(false);
-        }
-    }
-
     private void SetAndDisplayCharacterImage(string imageFileName)
     {
         SetAndDisplayImage(characterImage, imageFileName);

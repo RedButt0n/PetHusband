@@ -42,4 +42,34 @@ public abstract class APHParagraph :MonoBehaviour, IPHParagraph
         }
     }
 
+    protected Sprite ConstructSprite(string imageFileName)
+    {
+        Sprite sprite = null;
+        if (!string.IsNullOrEmpty(imageFileName))
+        {
+            sprite = Resources.Load<Sprite>(imageFileName);
+        }
+        else
+        {
+            Debug.Log("An empty filename has been provided as image file path, no image could be shown");           
+        }
+
+        return sprite;
+    }
+
+    protected void SetAndDisplayImage(Image image, string imageFileName)
+    {
+        var sprite = ConstructSprite(imageFileName);
+        if (sprite != null)
+        {
+            image.sprite = sprite;
+        }
+        else
+        {
+            Debug.Log("Failed to construct image! imageFileName: " + imageFileName);
+            //disable the image
+            image.gameObject.SetActive(false);
+        } 
+    }
+
 }

@@ -16,7 +16,7 @@ public class PHParagraphTVPause : APHParagraph
 
     public Image screenImage;
 
-    private bool enableNextButton = true;
+    private bool enableNextButton = false;
 
     //private GlobalVarContainer globalVarContainer;
 
@@ -52,6 +52,8 @@ public class PHParagraphTVPause : APHParagraph
 
         //Retrieve image Path
         //SetAndDisplayImage(ProcessImageFilename(parser, prevImage));
+        GlobalStoryVarContainer globalStoryVarContainer = GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>();
+        SetAndDisplayImage(screenImage,globalStoryVarContainer.GetImageOfMovieCurrentlyPlaying());
     }
 
     public override void SetOptions(List<BlockContent<Option>> optionList, PetHusbandPlayer player)
