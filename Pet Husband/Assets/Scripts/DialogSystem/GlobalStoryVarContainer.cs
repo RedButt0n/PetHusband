@@ -34,6 +34,17 @@ public class GlobalStoryVarContainer : MonoBehaviour
 
     }
 
+    public string GetMenuImageOfMovieCurrentlyPlaying()
+    {
+        string currentMenu = SelectedMovie;
+        if (string.IsNullOrEmpty(currentMenu))
+        {
+            currentMenu = "tv_option_CopRacer2";
+        }
+
+        return currentMenu;
+    }
+
     public string GetImageOfMovieCurrentlyPlaying()
     {
         string currentlyPlaying = string.Empty;
