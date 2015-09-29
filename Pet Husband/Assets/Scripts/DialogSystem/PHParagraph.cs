@@ -54,6 +54,15 @@ public class PHParagraph : APHParagraph
         if (!string.IsNullOrEmpty(backgroundImage))
         {
             SetAndDisplayBackgroundImage(backgroundImage);
+            GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>().PreviousBackgroundImage = backgroundImage;
+        }
+        else
+        {
+            backgroundImage = GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>().PreviousBackgroundImage;
+            if (!string.IsNullOrEmpty(backgroundImage))
+            {
+                SetAndDisplayBackgroundImage(backgroundImage);
+            }
         }
     }
 
