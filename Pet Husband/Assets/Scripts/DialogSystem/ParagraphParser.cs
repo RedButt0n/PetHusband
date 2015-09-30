@@ -44,19 +44,19 @@ public class ParagraphParser : TextParser
 
     public string ExtractParagraphType()
     {
-        return ExtractDataBetweenTags(paragraphToParse.Text, "Type");
+        return RemoveSpaces(ExtractDataBetweenTags(paragraphToParse.Text, "Type"));
         //return "EndScene";
     }
 
     public string ExtractScene()
     {
-        return ExtractDataBetweenTags(paragraphToParse.Text, "Scene");
+        return RemoveSpaces(ExtractDataBetweenTags(paragraphToParse.Text, "Scene"));
         //return "CS_end_monday_fight";
     }
 
     public string ExtractBackgroundImage()
     {
-        return ExtractDataBetweenTags(paragraphToParse.Text, "BGImage");
+        return RemoveSpaces(ExtractDataBetweenTags(paragraphToParse.Text, "BGImage"));
     }
 
     public string ExtractMessage()

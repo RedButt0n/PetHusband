@@ -53,7 +53,6 @@ public class TextParser
             int endTagIndex = text.IndexOf(endTag);
 
             outputText = text.Substring(beginTagIndex + beginTag.Length, endTagIndex - (beginTagIndex + beginTag.Length));
-            outputText = RemoveSpaces(outputText);
         }
         return outputText;
     }
