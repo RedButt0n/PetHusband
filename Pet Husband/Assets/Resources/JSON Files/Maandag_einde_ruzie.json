@@ -24,7 +24,7 @@
 				]
 			},
 			"TypeNewSceneType" : {
-				"content" : ["< Type >NewScene< /Type >< Scene >end_of_demo< /Scene>"]
+				"content" : ["< Type >NewScene< /Type >< Scene >end_of_demo< /Scene >"]
 			},
 			"victorWeMoetenTo" : {
 				"content" : ["*-Victor: -*We moeten toch naar de Interi\u00f6r winkel. Daar vinden we vast een mooie lamp!", {
