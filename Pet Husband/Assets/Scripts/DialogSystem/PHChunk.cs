@@ -58,7 +58,7 @@ public class PHChunk : MonoBehaviour {
             //paragraphComponent = activeParagraph.GetComponent<PHParagraph>();
             //paragraphComponent.Enable();
             //activeParagraph.SetActive(true);
-
+            GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>().previouslyShownParagraph = activeParagraph;
             activeParagraph.SetActive(false);
             var paragraphComponent = GetScriptComponentOfParagraph(activeParagraph);
             paragraphComponent.Disable();

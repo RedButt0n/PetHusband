@@ -10,6 +10,8 @@ public class GlobalStoryVarContainer : MonoBehaviour
 	public Color _playerColor;
 	public Color _husbandColor;
 
+    public GameObject previouslyShownParagraph;
+
     public string PreviousBackgroundImage
     {
         get { return _PreviousBackgroundImage; }

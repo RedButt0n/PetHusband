@@ -30,6 +30,8 @@ public class PHParagraphNewSceneLoader : APHParagraph
 
     public override void Enable()
     {
+        GameObject.Find("GlobalStoryVarContainer").GetComponent<GlobalStoryVarContainer>().previouslyShownParagraph.SetActive(true);
+
         if(!string.IsNullOrEmpty(_sceneToLoad))
         {
             Application.LoadLevel(_sceneToLoad);
