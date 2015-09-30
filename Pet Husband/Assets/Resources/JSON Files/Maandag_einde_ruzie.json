@@ -1,0 +1,54 @@
+{
+	"data" : {
+		"allowCheckpoints" : false,
+		"editorData" : {
+			"authorName" : "Anonymous",
+			"textSize" : 1,
+			"playPoint" : "TypeNewSceneType",
+			"libraryVisible" : false
+		},
+		"optionMirroring" : true,
+		"stitches" : {
+			"victorOeiSorry" : {
+				"content" : ["*-Victor: -*Oei, sorry...", {
+						"divert" : "victorHetSpijtMe"
+					}
+				]
+			},
+			"victorHetSpijtMe" : {
+				"content" : ["*-Victor: -*Het spijt me dat ik uitvloog en dat ik de lamp heb gebroken. Laten we morgen een nieuwe halen.", {
+						"image" : "Victor_lief.png"
+					}, {
+						"divert" : "victorWeMoetenTo"
+					}
+				]
+			},
+			"TypeNewSceneType" : {
+				"content" : ["< Type >NewScene< /Type >< Scene >end_of_demo< /Scene>"]
+			},
+			"victorWeMoetenTo" : {
+				"content" : ["*-Victor: -*We moeten toch naar de Interi\u00f6r winkel. Daar vinden we vast een mooie lamp!", {
+						"image" : "Victor_lief.png"
+					}, {
+						"divert" : "TypeNewSceneType"
+					}
+				]
+			},
+			"naamSchatKijkUit" : {
+				"content" : ["*-%naam%: -*Schat, kijk uit! ", {
+						"image" : "Victor_schok.png"
+					}, {
+						"divert" : "victorOeiSorry"
+					}, {
+						"pageNum" : 1
+					}
+				]
+			}
+		},
+		"initial" : "naamSchatKijkUit"
+	},
+	"title" : "Ruzie einde",
+	"updated_at" : "2015-09-30T19:31:22Z",
+	"created_at" : "2015-09-29T02:45:20Z",
+	"url_key" : "9b8r"
+}

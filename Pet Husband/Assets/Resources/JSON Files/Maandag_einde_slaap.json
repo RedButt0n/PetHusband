@@ -1,0 +1,40 @@
+{
+	"data" : {
+		"allowCheckpoints" : false,
+		"editorData" : {
+			"authorName" : "Anonymous",
+			"textSize" : 1,
+			"playPoint" : "TypeNewSceneType",
+			"libraryVisible" : false
+		},
+		"optionMirroring" : true,
+		"stitches" : {
+			"TypeNewSceneType" : {
+				"content" : ["< Type >NewScene< /Type >< Scene >end_of_demo< /Scene >"]
+			},
+			"victorWeMoetenMo" : {
+				"content" : ["*-Victor:-* We moeten morgen toch naar de Interi\u00f6r winkel. Daar vinden we vast een mooie zetel!", {
+						"image" : "Victor_lief.png"
+					}, {
+						"divert" : "TypeNewSceneType"
+					}
+				]
+			},
+			"victorJezusDatWa" : {
+				"content" : ["*-Victor: -*Jezus, dat was schrikken! Sorry dat ik in slaap viel, schat! We zullen ons een nieuwe moeten aan te schaffen.", {
+						"image" : "Victor_schok.png"
+					}, {
+						"divert" : "victorWeMoetenMo"
+					}, {
+						"pageNum" : 1
+					}
+				]
+			}
+		},
+		"initial" : "victorJezusDatWa"
+	},
+	"title" : "Slaap einde",
+	"updated_at" : "2015-09-30T19:18:26Z",
+	"created_at" : "2015-09-29T02:39:23Z",
+	"url_key" : "4h5f"
+}

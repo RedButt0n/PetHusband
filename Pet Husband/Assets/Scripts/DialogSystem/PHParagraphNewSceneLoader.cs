@@ -5,7 +5,7 @@ using Inklewriter.Player;
 using Inklewriter;
 using Inklewriter.Unity;
 
-public class PHParagraphEndScene : APHParagraph
+public class PHParagraphNewSceneLoader : APHParagraph
 {
     private string _sceneToLoad;
 
