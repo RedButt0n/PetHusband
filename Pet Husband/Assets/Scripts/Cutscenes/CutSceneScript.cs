@@ -15,6 +15,8 @@ public class CutSceneScript : MonoBehaviour {
 
 	public string _nextLevelName;			//name of the scene that should be loaded when cutscene is done
 
+	public bool _skippable = false;
+
 	void Start () {
 	
 		//Create full screen Rect for images
@@ -26,6 +28,10 @@ public class CutSceneScript : MonoBehaviour {
 
 	void Update ()
 	{
+		if (_skippable && Input.GetMouseButtonUp (0))
+		{
+			LoadNextScene();
+		}
 		//If cutscene didnt start yet, start
 		if (currentFrame < 0) 
 			NextFrame ();
@@ -42,10 +48,7 @@ public class CutSceneScript : MonoBehaviour {
 				
 				else										//if it is the last frame
 				{
-					if (Application.CanStreamedLevelBeLoaded(_nextLevelName))	//if next level exists
-						Application.LoadLevel(_nextLevelName);					//load the next level
-					else
-						Debug.Log("The inputted next level name does not exist. Check if it has been added to the build");
+					LoadNextScene();
 				}
 			}
 		}
@@ -56,7 +59,16 @@ public class CutSceneScript : MonoBehaviour {
 		++currentFrame;
 		_displayTime = _framelist[currentFrame]._time;
 		_image = _framelist[currentFrame]._image;
+		_framelist [currentFrame].PlaySound ();
 		_timer = 0.0f;
+	}
+
+	void LoadNextScene()
+	{
+		if (Application.CanStreamedLevelBeLoaded(_nextLevelName))	//if next level exists
+			Application.LoadLevel(_nextLevelName);					//load the next level
+		else
+			Debug.Log("The inputted next level name does not exist. Check if it has been added to the build");
 	}
 		
 	

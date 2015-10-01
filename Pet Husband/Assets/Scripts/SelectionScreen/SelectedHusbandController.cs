@@ -8,12 +8,18 @@ public class SelectedHusbandController : MonoBehaviour {
 	public Image _husbandImage;
 	public Text _husbandName;
 	public Text _husbandDescription;
+
+	public Image _husbandInfoImage;
 	public Text _husbandLongDescription;
+
+	public Button _selectButton;
+	public Button _infoButton;
 
 	public GameObject[] _husbandlist;				//List of all available husbands
 	private int _selectedNumber = 0;				//Number to iterate through husbandList
 	private HusbandProperties _selectedHusband;		//Variable to access properties of the selected husband
-	private int _amountOfHusbands;
+	private int _amountOfHusbands;					//Variable to store amount of available husbands
+
 	// Use this for initialization
 	void Start () {
 	
@@ -50,10 +56,16 @@ public class SelectedHusbandController : MonoBehaviour {
 
 	public void UpdateHusband() {
 		_selectedHusband = _husbandlist [_selectedNumber].GetComponent<HusbandProperties> ();
+
 		_husbandName.text = _selectedHusband._name;
 		_husbandDescription.text = _selectedHusband._description;
 		_husbandLongDescription.text = _selectedHusband._longDescription;
+
 		_husbandImage.sprite = _selectedHusband._image;
+		_husbandInfoImage.sprite = _selectedHusband._infoImage;
+		
+		_selectButton.interactable = _selectedHusband._unlocked;
+		_infoButton.interactable = _selectedHusband._unlocked;
 	}
 
 }
