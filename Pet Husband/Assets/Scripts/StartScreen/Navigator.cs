@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Navigator : MonoBehaviour {
 
@@ -25,12 +26,12 @@ public class Navigator : MonoBehaviour {
 	public void GoToSelectionScreen()
 	{
 		_globalVars._playerName = _input.text;
-		Application.LoadLevel ("Husband_selection_screen");
+		SceneManager.LoadScene ("Husband_selection_screen");
 	}
 
 	public void GoToFirstCutscene()
 	{
-		Application.LoadLevel ("First_Cutscene");
+		SceneManager.LoadScene ("First_Cutscene");
 	}
 
 	public void Quit()

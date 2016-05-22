@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class CutSceneScript : MonoBehaviour {
 
@@ -66,7 +68,7 @@ public class CutSceneScript : MonoBehaviour {
 	void LoadNextScene()
 	{
 		if (Application.CanStreamedLevelBeLoaded(_nextLevelName))	//if next level exists
-			Application.LoadLevel(_nextLevelName);					//load the next level
+			SceneManager.LoadScene(_nextLevelName);					//load the next level
 		else
 			Debug.Log("The inputted next level name does not exist. Check if it has been added to the build");
 	}

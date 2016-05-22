@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Inklewriter.Player;
 using Inklewriter;
 using Inklewriter.Unity;
+using UnityEngine.SceneManagement;
 
 public class PHParagraphNewSceneLoader : APHParagraph
 {
@@ -34,7 +35,7 @@ public class PHParagraphNewSceneLoader : APHParagraph
 
         if(!string.IsNullOrEmpty(_sceneToLoad))
         {
-            Application.LoadLevel(_sceneToLoad);
+			SceneManager.LoadScene(_sceneToLoad);
         }
     }
 
